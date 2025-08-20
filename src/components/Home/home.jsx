@@ -216,7 +216,8 @@ const Home = () => {
         <div className="relative w-full flex justify-center items-center h-[300px] md:h-[400px] lg:h-[500px]">
           {/* REALTY */}
           <h1
-            className="text-[60px] md:text-[120px] lg:text-[280px] font-bold text-white tracking-tight font-serif select-none leading-none text-center"
+            className="text-[60px] md:text-[120px] lg:text-[280px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-b from-white to-[#e8d0c3] bg-clip-text text-transparent"
+
             style={{
               fontFamily: "'Playfair Display', serif",
               marginTop: '40px',
@@ -227,16 +228,23 @@ const Home = () => {
           </h1>
           {/* CHAMBER overlapping middle */}
           <span
-            className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase"
+            className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase "
             style={{
-              color: '#FFC445', // Or #FFC100 or any gold as in your image
-              fontFamily: "'Playfair Display', serif", // Use same font as 'REALTY' for match
+              color: '#FFC445', // Or #FFC100 or any gold 
+              fontFamily: "'Playfair Display', serif", 
               transform: 'translate(-50%,-60%)',
               pointerEvents: 'none',
               letterSpacing: '0.06em',
               whiteSpace: 'nowrap',
               marginTop: '50px',
               marginLeft: '0px',
+              backgroundColor:'whitesmoke',
+              paddingTop: '0px',
+              paddingBottom: '0.1px',
+              paddingLeft: '5px',
+              paddingRight: '5px',
+              lineHeight:1,
+              boxShadow: '0 1px 8px 0 rgba(33,33,33,0.02)'
             }}
           >
             CHAMBER

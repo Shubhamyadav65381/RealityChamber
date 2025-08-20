@@ -23,12 +23,12 @@ const Navbar = () => {
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3">
           {/* Left nav group */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-0.5">
             {leftNav.map((item, idx) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="px-6 py-2 bg-transparent border border-white rounded-full text-white font-medium text-base flex items-center gap-1 hover:bg-white/10 transition "
+                className="px-6 py-2 bg-transparent border border-white/70 rounded-full text-white font-medium text-base flex items-center gap-1 hover:bg-white hover:text-black transition "
               >
                 {item.label}
               </a>
@@ -36,36 +36,44 @@ const Navbar = () => {
           </div>
 
           {/* Center logo and tagline */}
-            <div className="relative flex items-center justify-center">
-             {/* Realty word */}
-              <span
-                className="text-[50px] font-bold text-black font-serif leading-none"
-                style={{
-                  fontFamily: "'Playfair Display', 'Times New Roman', serif",
-                }}
-              >
-                            REALTY
-              </span>
+            <div className="flex flex-col items-center justify-center gap-0">
+  {/* REALTY */}
+  <span
+    className="font-bold leading-none"
+    style={{
+      fontFamily: "'Montserrat', sans-serif",
 
-              {/* Chamber word, absolutely centered over Realty */}
-              <span
-                  className="absolute inline-block text-[17px] font-extrabold tracking-[0.5em] text-[#D4AF37] uppercase bg-white leading-none"
-                  style={{
-                    fontFamily: "'Montserrat', 'Arial', sans-serif",
-                    letterSpacing: "0.05em",
-                    marginTop: "5px",
-                  }}
-                >
-                  CHAMBER
-                </span>
-            </div>
+      fontSize: "34px",
+      color: "#fff",
+      letterSpacing: "0.2px",
+    }}
+  >
+    REALTY
+  </span>
+
+  {/* CHAMBER */}
+  <span
+    className="uppercase tracking-widest"
+    style={{
+      fontFamily: "'Montserrat', sans-serif",
+      fontWeight: 500,
+      fontSize: "15px",
+      color: "#fff",
+      letterSpacing: "0.17em",
+      lineHeight: "1",
+    }}
+  >
+    chamber
+  </span>
+</div>
+
 
           {/* Right nav group */}
           <div className="hidden lg:flex items-center space-x-3">
             {/* "Contact Us" - outlined */}
             <a
               href="#contact"
-              className="px-6 py-2 rounded-full border border-white text-white font-semibold text-base bg-transparent hover:bg-white/10 transition"
+              className="px-6 py-2 rounded-full border border-white text-white font-semibold text-base bg-transparent hover:bg-white/70 hover:text-black transition"
             >
               Contact Us
             </a>
