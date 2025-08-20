@@ -7,16 +7,22 @@ const Home = () => {
   const [scale, setScale] = useState(1.35);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      // Map scrollY (0 to 300px) to scale (1.35 to 2.15)
-      const newScale = 1.35 + Math.min(scrollY / 3000, 0.8);
-      setScale(newScale);
-    };
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Scale for building: from 1.35 to 2.15
+    const buildingScale = 1.35 + Math.min(scrollY / 3000, 0.8);
+
+    // Scale for background: from 1 (no zoom) to max 1.1 (or 1.15)
+    const backgroundScale = 1 + Math.min(scrollY / 10000, 0.1); // slower, subtle zoom
+
+    setScale({ building: buildingScale, background: backgroundScale });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   return (
     <>
@@ -90,8 +96,14 @@ const Home = () => {
       </div>
 
       <section
-        className="w-[99vw] h-[139vh] bg-cover bg-center relative scroll-smooth overflow-hidden"
-        style={{ backgroundImage: `url(${backgroundImg})` }}
+        className="w-[screen] h-[139vh] bg-cover bg-center relative scroll-smooth overflow-hidden"
+        style={{
+          backgroundImage: `url(${backgroundImg})`,
+          transform: `scale(${scale.background})`,
+          transition: 'transform 0.2s ease-out',
+          transformOrigin: 'center center',
+          overflow: 'hidden',
+        }}
       >
         {/* Vertical lines overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
@@ -177,7 +189,7 @@ const Home = () => {
   style={{
     left: '55%',    // left edge of the SVG is at middle of the info box
     top: '-34px',   // adjust as needed to reach top border of box
-    transform: 'translateX(-55%)', // center from left 50%
+    transform: 'translateX(-50%)', // center from left 50%
   }}
 >
   <svg width="110" height="44" viewBox="0 0 110 44" fill="none">
