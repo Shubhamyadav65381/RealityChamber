@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/navbar.jsx';
+import Social from '../social/social.jsx';
 import backgroundImg from '../../assets/images/background.png';
 import cutout_building from '../../assets/images/cutout_building.png';
 
@@ -238,18 +239,17 @@ const Home = () => {
               whiteSpace: 'nowrap',
               marginTop: '50px',
               marginLeft: '0px',
-              backgroundColor:'whitesmoke',
-              paddingTop: '0px',
-              paddingBottom: '0.1px',
-              paddingLeft: '5px',
-              paddingRight: '5px',
+              backgroundColor:'white',
+              padding:'0 0px',
               lineHeight:1,
+              display:'inline-block',
               boxShadow: '0 1px 8px 0 rgba(33,33,33,0.02)'
             }}
           >
             CHAMBER
           </span>
         </div>
+       <Social />
       </section>
     </>
   );
