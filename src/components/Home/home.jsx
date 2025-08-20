@@ -21,9 +21,15 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
+      {/* Vertical lines overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
+        </div>
       {/* address block */}
-      <div className="flex justify-between items-start bg-[#88A0A8] w-full px-8 pt-16 mt-10">
+      <div className="flex justify-between items-start bg-[#88A0A8] w-full px-46 pt-16 mt-10">
         {/* LEFT COLUMN: Address block */}
         <div className="flex flex-col items-start w-1/3">
           <a
@@ -87,6 +93,15 @@ const Home = () => {
         className="w-[99vw] h-[139vh] bg-cover bg-center relative scroll-smooth overflow-hidden"
         style={{ backgroundImage: `url(${backgroundImg})` }}
       >
+        {/* Vertical lines overlay */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
+        </div>
+
+
         {/* cutout building image which is zoomed on scroll */}
         <img
           src={cutout_building}
@@ -101,6 +116,89 @@ const Home = () => {
             transition: 'transform 0.2s ease-out',
           }}
         />
+          {/* Left Info Box: Local stone... */}
+        <div
+          className="absolute z-30 pointer-events-none"
+          style={{ left: '14vw', top: '80vh' }}
+          >
+          <div className="relative ml-[90px]" style={{ width: 210 }}>
+            <div
+              className="p-3 rounded-xl text-white font-medium shadow-xl"
+              style={{
+               background: 'transparent',
+                border: '1.5px solid rgba(255,255,255,0.5)',
+                backdropFilter: 'blur(1px)',
+              }}
+            >
+              Realty Chamber <br /> Single Window Solution <br /> for All of Your Needs
+            </div>
+            {/* SVG line & dot */}
+            <div className="absolute pointer-events-none" style={{ right: -85, top: 5 }}>
+              <svg width="85" height="44" viewBox="0 0 85 44" fill="none">
+                <polyline
+                  points="-8,50 45,5 88,5"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity="0.8"
+                />
+                <circle cx="79" cy="6" r="6" fill="white" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+      
+      {/* VISION Info Box (bottom-right) */}
+      <div
+        className="absolute z-30 pointer-events-none"
+        style={{
+          left: '53vw',     // adjust as needed for your layout
+          top: '100vh',      // adjust as needed for vertical position
+       }}
+      >
+        <div className="relative" style={{ width: 345 }}>
+          {/* Box content */}
+          <div
+            className="p-5 rounded-xl text-white font-normal shadow-xl"
+            style={{
+              background: 'transparent',
+              border: '1.5px solid rgba(255,255,255,0.5)',
+              backdropFilter: 'blur(1px)',
+            }}
+          >
+            <span className="font-bold tracking-wide pb-1 block uppercase text-sm">VISION</span>
+            We are committed to aspire to be a world leader in Real Estate Industry with high values, honesty and utmost dedication.
+          </div>
+         {/* SVG connector line & dot (top-right of box, angled upwards) */}
+          <div
+  className="absolute pointer-events-none"
+  style={{
+    left: '55%',    // left edge of the SVG is at middle of the info box
+    top: '-34px',   // adjust as needed to reach top border of box
+    transform: 'translateX(-55%)', // center from left 50%
+  }}
+>
+  <svg width="110" height="44" viewBox="0 0 110 44" fill="none">
+    {/* Line: horizontal then up/right to dot */}
+    <polyline
+      points="0,32 66,2 103,2"
+      stroke="white"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      opacity="0.8"
+    />
+    <circle cx="103" cy="2" r="6" fill="white" />
+  </svg>
+</div>
+
+       </div>
+      </div>
+
+
+
 
         {/* Rality chamber is on the main image */}
         <div className="relative w-full flex justify-center items-center h-[300px] md:h-[400px] lg:h-[500px]">

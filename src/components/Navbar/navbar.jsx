@@ -49,14 +49,15 @@ const Navbar = () => {
 
               {/* Chamber word, absolutely centered over Realty */}
               <span
-                className="absolute text-[17px] font-extrabold tracking-[0.5em] text-[#D4AF37] uppercase font-weight-800 bg-white rounded-md  bg-opacity-15 "
-                style={{
-                  fontFamily: "'Montserrat', 'Arial', sans-serif",
-                  letterSpacing: "0.2em",
-                }}
+                  className="absolute inline-block text-[17px] font-extrabold tracking-[0.5em] text-[#D4AF37] uppercase bg-white leading-none"
+                  style={{
+                    fontFamily: "'Montserrat', 'Arial', sans-serif",
+                    letterSpacing: "0.05em",
+                    marginTop: "5px",
+                  }}
                 >
                   CHAMBER
-              </span>
+                </span>
             </div>
 
           {/* Right nav group */}
