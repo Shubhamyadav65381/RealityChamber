@@ -217,37 +217,39 @@ const Home = () => {
         <div className="relative w-full flex justify-center items-center h-[300px] md:h-[400px] lg:h-[500px]">
           {/* REALTY */}
           <h1
-            className="text-[60px] md:text-[120px] lg:text-[280px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-b from-white to-[#e8d0c3] bg-clip-text text-transparent"
+            className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-b from-[#ffffff] to-[#c08568]  bg-clip-text text-transparent"
 
             style={{
               fontFamily: "'Playfair Display', serif",
-              marginTop: '40px',
+              marginTop: '-40px',
               marginLeft: '70px',
+              letterSpacing: '0.005em',
+
             }}
           >
             REALTY
           </h1>
           {/* CHAMBER overlapping middle */}
-          <span
-            className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase "
-            style={{
-              color: '#FFC445', // Or #FFC100 or any gold 
-              fontFamily: "'Playfair Display', serif", 
-              transform: 'translate(-50%,-60%)',
-              pointerEvents: 'none',
-              letterSpacing: '0.06em',
-              whiteSpace: 'nowrap',
-              marginTop: '50px',
-              marginLeft: '0px',
-              backgroundColor:'white',
-              padding:'0 0px',
-              lineHeight:1,
-              display:'inline-block',
-              boxShadow: '0 1px 8px 0 rgba(33,33,33,0.02)'
-            }}
-          >
-            CHAMBER
-          </span>
+          <h2
+  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[115px] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-t from-[#ffb701] to-[#8f6a0d]"
+  style={{
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
+    fontWeight: 800,
+    transform: 'translate(-50%,-60%)',
+    pointerEvents: 'none',
+    letterSpacing: '0em',
+    whiteSpace: 'nowrap',
+    marginTop: '70px',
+    marginLeft: '5px',
+    backgroundColor: 'transparent',
+    padding: '0 0px',
+    lineHeight: 1,
+    display: 'inline-block',
+  }}
+>
+  CHAMBER
+</h2>
+
         </div>
        <Social />
       </section>

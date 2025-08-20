@@ -36,7 +36,7 @@ const Navbar = () => {
           </div>
 
           {/* Center logo and tagline */}
-            <div className="flex flex-col items-center justify-center gap-0">
+            <div className=" flex-col items-center justify-center gap-0 inline-block">
   {/* REALTY */}
   <span
     className="font-bold leading-none"
@@ -48,7 +48,7 @@ const Navbar = () => {
       letterSpacing: "0.2px",
     }}
   >
-    REALTY
+    REALTY 
   </span>
 
   {/* CHAMBER */}
@@ -57,9 +57,9 @@ const Navbar = () => {
     style={{
       fontFamily: "'Montserrat', sans-serif",
       fontWeight: 500,
-      fontSize: "15px",
+      fontSize: "20px",
       color: "#fff",
-      letterSpacing: "0.17em",
+      letterSpacing: "0em",
       lineHeight: "1",
     }}
   >

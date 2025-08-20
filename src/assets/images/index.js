@@ -4,6 +4,7 @@ import insta_bl from './insta_bl.png';
 import inst_wh from './inst_wh.png';
 import x_white from './x_white.png';
 import x_black from './x_black.png';
+import card_img from './card_img.png';
 
 export default {
   facebook_bl,
@@ -12,4 +13,5 @@ export default {
   inst_wh,
   x_white,
   x_black,
+  card_img,
 };
