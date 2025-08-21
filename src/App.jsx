@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Home from './components/Home/home.jsx';
-import Second from './components/secondPage/second.jsx';
+import Second from './components/SecondPage/second.jsx';
 
 function App() {
   return (
