@@ -36,7 +36,7 @@ const Home = () => {
           <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
         </div>
       {/* address block */}
-      <div className="flex justify-between items-start bg-[#88A0A8] w-full px-46 pt-16 mt-10">
+      <div className="flex justify-between items-start  bg-gradient-to-t from-[#88a0a8] to-[#88A0A8] w-full px-46 pt-16 mt-10">
         {/* LEFT COLUMN: Address block */}
         <div className="flex flex-col items-start w-1/3">
           <a
@@ -68,7 +68,7 @@ const Home = () => {
         <div className="flex flex-col items-start w-1/3">
           <div className="flex items-center">
             <svg
-              className="w-8 h-8 mr-3 flex-shrink-0 animate-spin-slow"
+              className="w-8 h-8 mr-3 ml-[-30px] flex-shrink-0 animate-spin-slow"
               viewBox="0 0 48 48"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -87,10 +87,10 @@ const Home = () => {
                 />
               ))}
             </svg>
-            <span className="text-white text-lg font-semibold leading-tight">
-              Reality Chamber
+            <span className="text-white text-lg font-semibold leading-tight" style={{marginLeft:'0px'}}>
+              At Realty Chamber
               <br />
-              Your Real Estate Partner
+              turning real estate into <br /> timeless investments.
             </span>
           </div>
         </div>
@@ -186,29 +186,29 @@ const Home = () => {
           </div>
          {/* SVG connector line & dot (top-right of box, angled upwards) */}
           <div
-  className="absolute pointer-events-none"
-  style={{
-    left: '55%',    // left edge of the SVG is at middle of the info box
-    top: '-34px',   // adjust as needed to reach top border of box
-    transform: 'translateX(-50%)', // center from left 50%
-  }}
->
-  <svg width="110" height="44" viewBox="0 0 110 44" fill="none">
-    {/* Line: horizontal then up/right to dot */}
-    <polyline
-      points="0,32 66,2 103,2"
-      stroke="white"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      opacity="0.8"
-    />
-    <circle cx="103" cy="2" r="6" fill="white" />
-  </svg>
-</div>
+            className="absolute pointer-events-none"
+            style={{
+              left: '55%',    // left edge of the SVG is at middle of the info box
+              top: '-34px',   // adjust as needed to reach top border of box
+              transform: 'translateX(-50%)', // center from left 50%
+            }}
+          >
+            <svg width="110" height="44" viewBox="0 0 110 44" fill="none">
+              {/* Line: horizontal then up/right to dot */}
+              <polyline
+                points="0,32 66,2 103,2"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity="0.8"
+              />
+             <circle cx="103" cy="2" r="6" fill="white" />
+            </svg>
+          </div>
 
+        </div>
        </div>
-      </div>
 
 
 
@@ -217,21 +217,31 @@ const Home = () => {
         <div className="relative w-full flex justify-center items-center h-[300px] md:h-[400px] lg:h-[500px]">
           {/* REALTY */}
           <h1
-            className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-b from-[#ffffff] to-[#c08568]  bg-clip-text text-transparent"
-
+            className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-clip-text text-transparent"
             style={{
               fontFamily: "'Playfair Display', serif",
-              marginTop: '-40px',
+              marginTop: '-70px',
               marginLeft: '70px',
               letterSpacing: '0.005em',
-
+              lineHeight: '3.2',
+              transform: 'scaleY(1.2)',
+              backgroundImage: `
+                linear-gradient(
+                  to top,
+                  rgba(219, 158, 9, 0.8) 0%,           /* Gold at bottom with some transparency */
+                  rgba(219, 158, 9, 0.4) 30%,          /* Gold fading upwards */
+                  rgba(255, 255, 255, 1) 50%,           /* Pure white starting from 60% to top */
+                  rgba(255, 255, 255, 1) 100%
+                )
+              `,
             }}
           >
             REALTY
           </h1>
+
           {/* CHAMBER overlapping middle */}
           <h2
-  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[115px] font-bold uppercase text-transparent bg-clip-text bg-gradient-to-t from-[#ffb701] to-[#8f6a0d]"
+  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase text-transparent bg-clip-text"
   style={{
     fontFamily: "'Plus Jakarta Sans', sans-serif",
     fontWeight: 800,
@@ -239,16 +249,25 @@ const Home = () => {
     pointerEvents: 'none',
     letterSpacing: '0em',
     whiteSpace: 'nowrap',
-    marginTop: '70px',
-    marginLeft: '5px',
+    marginTop: '80px',
+    marginLeft: '-15px',
     backgroundColor: 'transparent',
-    padding: '0 0px',
+    padding: 0,
     lineHeight: 1,
     display: 'inline-block',
+    backgroundImage: 'linear-gradient(to top, #ffb701 65%, #fffbe8 100%)', // gold to off-white
+    textShadow: `
+      0 4px 0 #edd89f,     /* thick light shadow for "3D base" */
+      0 8px 18px #c28d0c,  /* soft outer glow for golden shine */
+      0 1px 1px #ffb701,     /* subtle darker base near letters */
+    `,
+    WebkitBackgroundClip: 'text',      // for Safari
+    WebkitTextFillColor: 'transparent' // for Safari
   }}
 >
   CHAMBER
 </h2>
+
 
         </div>
        <Social />

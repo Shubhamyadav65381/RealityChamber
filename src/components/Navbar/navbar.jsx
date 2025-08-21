@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/button';
-
+import images from '../../assets/images/index'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -36,35 +36,52 @@ const Navbar = () => {
           </div>
 
           {/* Center logo and tagline */}
-            <div className=" flex-col items-center justify-center gap-0 inline-block">
-  {/* REALTY */}
-  <span
-    className="font-bold leading-none"
+<div className="flex items-center justify-center gap-3">
+  {/* Logo */}
+  <span className="flex items-center justify-center">
+  <img
+    src={images.logo}
+    alt="logo image"
+    className="w-16 h-16 object-contain drop-shadow-lg"
     style={{
-      fontFamily: "'Montserrat', sans-serif",
-
-      fontSize: "34px",
-      color: "#fff",
-      letterSpacing: "0.2px",
+      filter: 'brightness(1.5) contrast(1.2) drop-shadow(0 0 4px rgba(0,0,0,0.6))',
     }}
-  >
-    REALTY 
-  </span>
+  />
+</span>
 
-  {/* CHAMBER */}
-  <span
-    className="uppercase tracking-widest"
-    style={{
-      fontFamily: "'Montserrat', sans-serif",
-      fontWeight: 500,
-      fontSize: "20px",
-      color: "#fff",
-      letterSpacing: "0em",
-      lineHeight: "1",
-    }}
-  >
-    chamber
-  </span>
+
+
+  {/* Text container for REALTY and chamber stacked vertically */}
+  <div className="flex flex-col items-start">
+    {/* REALTY */}
+    <span
+      className="font-bold leading-none"
+      style={{
+        fontFamily: "'Playfair Display', serif",
+        fontSize: "34px",
+        color: "#fff",
+        letterSpacing: "0.3px",
+      }}
+    >
+      REALTY
+    </span>
+
+    {/* CHAMBER */}
+    <span
+      className="uppercase tracking-widest"
+      style={{
+        fontFamily: "'Playfair Display', serif",
+        fontWeight: 500,
+        fontSize: "15px",
+        color: "#fff",
+        letterSpacing: "0.17em",
+        lineHeight: "1",
+        paddingLeft:"14px"
+      }}
+    >
+      chamber
+    </span>
+  </div>
 </div>
 
 

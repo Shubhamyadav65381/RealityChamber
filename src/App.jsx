@@ -1,17 +1,14 @@
 import React from 'react'
 
 import Home from './components/Home/home.jsx';
-import SecondPage from './components/SecondPage/second.jsx';
+import Second from './components/secondPage/second.jsx';
 
 function App() {
   return (
     <>
       <Home />
-      {/* <SecondPage /> */}
-      
-    
-    
-  </>
+      <Second />
+    </>
   )
 }
 
