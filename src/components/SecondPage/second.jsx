@@ -1,6 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import Navbar from "../Navbar/navbar.jsx";
 import AboutSection from "./imgScroll.jsx";
+import ExperienceSection from "./cardScroll.jsx";
+
 
 const Second = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +23,7 @@ const Second = () => {
     <>
       <Navbar />
 
-      <div className="min-h-[280vh] w-full bg-[#87a8b5] relative overflow-hidden">
+      <div className="min-h-[210vh] w-full bg-[#87a8b5] relative overflow-hidden">
         {/* Vertical lines overlay, whole page */}
         {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
@@ -65,7 +67,10 @@ const Second = () => {
             </a>
           </span>
         </div>
+        {/* images scrolling in the background */}
         <AboutSection />
+        {/* experience section  and cards*/}
+        <ExperienceSection />
       </div>
     </>
   );

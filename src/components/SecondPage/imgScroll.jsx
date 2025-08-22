@@ -115,7 +115,7 @@ const AboutSection = () => {
     <section className="section">
       <div className="base-container">
         <div className="about-hotel-wrapper flex flex-wrap justify-between">
-          <div className="photos-wrapper " style={{position:"relative", width:"100%", height:"600px" }}>
+          <div className="photos-wrapper " style={{position:"relative", width:"100%", height:"320px" }}>
             {imagesData.map(({ src, alt, overlayClass, customClass, style }, index) => (
               <div
                 key={index}

@@ -10,7 +10,9 @@ import sec_img_one from './sec_img_one.png';
 import sec_img_two from './sec_img_two.png';
 import sec_img_three from './sec_img_three.png';
 import sec_img_four from './sec_img_four.png';
-
+import card_img_one from './card_img_one.png';
+import card_img_two from './card_img_two.png';
+import card_img_three from './card_img_three.png';
 
 
 export default {
@@ -26,4 +28,7 @@ export default {
   sec_img_two,
   sec_img_three,
   sec_img_four,
+  card_img_one,
+  card_img_two,
+  card_img_three,
 };
