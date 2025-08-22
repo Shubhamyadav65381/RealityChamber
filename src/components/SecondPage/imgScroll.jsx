@@ -117,26 +117,26 @@ const AboutSection = () => {
           <div className="photos-wrapper " style={{position:"relative", width:"100%", height:"600px" }}>
             {imagesData.map(({ src, alt, overlayClass, customClass, style }, index) => (
               <div
-  key={index}
-  ref={(el) => (imgRefs.current[index] = el)}
-  className={`${customClass} relative ${visibleStates[index] ? "translate-y-0" : "translate-y-12"}`}
-  style={{
-    willChange: "transform, opacity",
-    transform: `translate3d(0px, ${getTranslateY(index)}%, 0px) scale3d(1,1,1)`,
-    opacity: visibleStates[index] ? 1 : 0,
-    transition: "opacity 1.6s cubic-bezier(0.23, 1, 0.32, 1), transform 1.6s cubic-bezier(0.23, 1, 0.32, 1)",
-    ...style,
-  }}
->
-  <img
-    src={src}
-    alt={alt}
-    loading="lazy"
-    className="hotel-image w-full h-auto block rounded-3xl"
-    style={{ transformStyle: "preserve-3d" }}
-  />
-  <div className={`dark-image-overlay absolute inset-0 pointer-events-none ${overlayClass}`} />
-</div>
+                key={index}
+                ref={(el) => (imgRefs.current[index] = el)}
+                className={`${customClass} relative ${visibleStates[index] ? "translate-y-0" : "translate-y-12"}`}
+                style={{
+                  willChange: "transform, opacity",
+                  transform: `translate3d(0px, ${getTranslateY(index)}%, 0px) scale3d(1,1,1)`,
+                  opacity: visibleStates[index] ? 1 : 0,
+                  transition: "opacity 1.6s cubic-bezier(0.23, 1, 0.32, 1), transform 1.6s cubic-bezier(0.23, 1, 0.32, 1)",
+                  ...style,
+                }}
+                >
+                <img
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  className="hotel-image w-full h-auto block rounded-3xl"
+                  style={{ transformStyle: "preserve-3d" }}
+                />
+                <div className={`dark-image-overlay absolute inset-0 pointer-events-none ${overlayClass}`} />
+              </div>
 
             ))}
           </div>
