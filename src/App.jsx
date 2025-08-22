@@ -8,9 +8,13 @@ import ThirdPage from './components/thirdpage/third.jsx';
 function App() {
   return (
     <>
+
+
       <Home />
       <Second />
       <ThirdPage />
+    
+    
     </>
   )
 }
