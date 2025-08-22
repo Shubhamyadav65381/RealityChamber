@@ -49,7 +49,7 @@ const ThirdPage = () => {
             >
               We’re thrilled to announce an exciting motion update for the Realty Chamber website!
                You’ve seen the design previews, and now we
-               can’t wait to reveal the full experience coming your way.
+               can’t wait to reveal the full experience coming your way
             </p>
           </div>
           <a
