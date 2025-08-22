@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import Navbar from "../Navbar/navbar";
+import Navbar from "../Navbar/navbar.jsx";
+import AboutSection from "./imgScroll.jsx";
 
 const Second = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,12 +23,12 @@ const Second = () => {
 
       <div className="min-h-[180vh] w-full bg-[#87a8b5] relative overflow-hidden">
         {/* Vertical lines overlay, whole page */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
-        </div>
+        </div> */}
 
         {/* Fade-in section, above lines */}
         <div
@@ -48,6 +49,7 @@ const Second = () => {
             We deliver world-class property solutions with integrity, innovation, and unmatched expertise — turning opportunities into success for our clients.
           </h3>
         </div>
+        <AboutSection />
       </div>
     </>
   );

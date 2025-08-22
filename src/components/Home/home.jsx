@@ -228,8 +228,8 @@ const Home = () => {
               backgroundImage: `
                 linear-gradient(
                   to top,
-                  rgba(219, 158, 9, 0.8) 0%,           /* Gold at bottom with some transparency */
-                  rgba(219, 158, 9, 0.4) 30%,          /* Gold fading upwards */
+                  rgba(252, 180, 3, 0.9) 0%,           /* Gold at bottom with some transparency */
+                  rgba(252, 180, 3, 0.4) 34%,          /* Gold fading upwards */
                   rgba(255, 255, 255, 1) 50%,           /* Pure white starting from 60% to top */
                   rgba(255, 255, 255, 1) 100%
                 )
@@ -240,11 +240,11 @@ const Home = () => {
           </h1>
 
           {/* CHAMBER overlapping middle */}
-          <h2
+    <h2
   className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase text-transparent bg-clip-text"
   style={{
     fontFamily: "'Plus Jakarta Sans', sans-serif",
-    fontWeight: 800,
+    fontWeight: 900,
     transform: 'translate(-50%,-60%)',
     pointerEvents: 'none',
     letterSpacing: '0em',
@@ -255,18 +255,21 @@ const Home = () => {
     padding: 0,
     lineHeight: 1,
     display: 'inline-block',
-    backgroundImage: 'linear-gradient(to top, #ffb701 65%, #fffbe8 100%)', // gold to off-white
+    backgroundImage: 'linear-gradient(135deg, #d4af37 0%, #ffec9a 40%, #b58109 80%)', // rich gold gradient
     textShadow: `
-      0 4px 0 #edd89f,     /* thick light shadow for "3D base" */
-      0 8px 18px #c28d0c,  /* soft outer glow for golden shine */
-      0 1px 1px #ffb701,     /* subtle darker base near letters */
+      0 2px 2px #b58300,     /* dark base shadow */
+      0 5px 5px rgba(255, 224, 102, 0.6), /* soft gold glow */
+      0 1px 0 #ffd54f,       /* highlight edge */
+      0 0 5px #fff9d0,       /* subtle light shimmer */
+      0 10px 12px rgba(181, 129, 9, 0.8)  /* deeper glow for depth */
     `,
-    WebkitBackgroundClip: 'text',      // for Safari
-    WebkitTextFillColor: 'transparent' // for Safari
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
   }}
 >
   CHAMBER
 </h2>
+
 
 
         </div>
