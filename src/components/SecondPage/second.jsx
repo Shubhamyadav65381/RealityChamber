@@ -21,7 +21,7 @@ const Second = () => {
     <>
       <Navbar />
 
-      <div className="min-h-[180vh] w-full bg-[#87a8b5] relative overflow-hidden">
+      <div className="min-h-[280vh] w-full bg-[#87a8b5] relative overflow-hidden">
         {/* Vertical lines overlay, whole page */}
         {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
@@ -48,6 +48,22 @@ const Second = () => {
             is a trusted name in real estate with a strong presence in India and Dubai.
             We deliver world-class property solutions with integrity, innovation, and unmatched expertise — turning opportunities into success for our clients.
           </h3>
+
+          <span style={{marginTop:"100px", width:"430px"}} >
+            <p className="text-white text-center text-[1.3rem]  md:text-[1.2rem] leading-tight mb-6 max-w-3xl">
+              We have a holistic philosophy which translates into creating a harmonious environment, complemented by wellness services that aim to detoxify and rejuvenate your mind, body.
+            </p>
+            <a
+              href="#"
+              className="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold text-base flex items-center gap-1 transition hover:bg-[#87A8B5] hover:border 1px solid white shadow"
+              style={{ width:"200px", textAlign:"center", marginLeft:"130px", position:"absolute", top:"640px" }}
+            >Find out more
+              {/* Arrow icon */}
+              <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </span>
         </div>
         <AboutSection />
       </div>

@@ -49,9 +49,9 @@ const AboutSection = () => {
     {
       src: images.sec_img_one,
       alt: "Project Photo 1",
-      baseOffset: -40.7,
+      baseOffset: -70.7,
       overlayClass: "bg-black opacity-20 rounded-3xl",
-      scrollFactor: 0.13, // adjest movement of image in Y direction
+      scrollFactor: 0.17, // adjest movement of image in Y direction
       style: { width: "340px",
         height:"215px",
         marginLeft:"68%",
@@ -62,16 +62,16 @@ const AboutSection = () => {
     {
       src: images.sec_img_two,
       alt: "Project Photo 2",
-      baseOffset: 34.27,
+      // baseOffset: 14.27,
       overlayClass: "rounded-3xl",
       customClass: "scroll-image-2",
       style: { 
           width: "240px",
           borderRadius: "8px",
-          marginTop: "2px",
+          // marginTop: "2px",
           marginLeft:"16%",
           position: "relative",
-          transform: "translateY(-25px)",
+          transform: "translateY(-95px)",
           zIndex: 1
 
         },
@@ -79,10 +79,10 @@ const AboutSection = () => {
     {
       src: images.sec_img_three,
       alt: "Project Photo 3",
-      baseOffset: 140,
+      baseOffset: 100,
       overlayClass: "bg-black opacity-10 rounded-3xl",
       customClass: "scroll-image-3",
-      scrollFactor: 0.12, // adjest movement of image in Y direction
+      scrollFactor: 0.13, // adjest movement of image in Y direction
       style: {
         width: "300px", 
         height: "350px",
@@ -93,7 +93,8 @@ const AboutSection = () => {
     {
       src: images.sec_img_four,
       alt: "Project Photo 4",
-      baseOffset: 1,
+      baseOffset: -30,
+      scrollFactor: 0.1, // adjest movement of image in Y direction
       overlayClass: "opacity-10 rounded-3xl",
       customClass: "scroll-image-4",
       style: { 
