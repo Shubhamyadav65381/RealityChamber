@@ -1,114 +1,328 @@
-import React from "react";
+import React, { useState } from "react";
 
 const villas = [
   {
     name: "Sell A Property",
     description: "Plots, flats, villas, or offices available for sale with ease.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/683ffef86ef99eac1d7b0e45_1.jpg",
   },
   {
     name: "Purchase A Property",
     description: "Find your ideal residential or commercial property today.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/683fffa34e6b20a22abf9e28_2.jpg",
   },
   {
     name: "Rent A Property",
     description: "Choose from homes or spaces available for rent or lease.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840015e15045b3eb719f6ee_6.jpg",
   },
   {
     name: "Joint Venture",
     description: "Partner with Realty Chamber for growth and collaboration.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840007b208d3b7b8b689626_5.jpg",
   },
   {
     name: "Property Exchange",
     description: "Hassle-free property swaps tailored to your needs.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840000a3741bb8ad7508b80_3.jpg",
   },
   {
     name: "Investors",
     description: "Explore opportunities designed exclusively for investors.",
+    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840004185c356f0b39ad388_4.jpg",
   },
 ];
 
+const bgColor = "#171b19";
+const borderColor = "#243137";
+const highlightColor = "#e3ae7b";
+const textColor = "#ececec";
+
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
 const Tile = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [cardStyle, setCardStyle] = useState({
+    transform: "perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1)",
+    top: 0,
+    left: 0,
+  });
+
+  const handleRowEnter = (index) => {
+    setHoveredIndex(index);
+    setCardStyle((prev) => ({
+      ...prev,
+      transform: "perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1.08)",
+      transition: "transform 0.3s cubic-bezier(.5,1.8,.6,.95)",
+    }));
+  };
+
+  const handleRowLeave = () => {
+    setHoveredIndex(null);
+    setCardStyle((prev) => ({
+      ...prev,
+      transform: "perspective(1200px) rotateX(0deg) rotateY(0deg) scale(1)",
+      transition: "transform 0.4s cubic-bezier(.5,.6,.46,.95)",
+      top: 0,
+      left: 0,
+    }));
+  };
+
+  const handleMouseMove = (e) => {
+    const cursorX = e.clientX;
+    const cursorY = e.clientY;
+    
+    const rect = e.currentTarget.getBoundingClientRect();
+    const relX = cursorX - rect.left;
+    const relY = cursorY - rect.top;
+    const centerX = rect.width / 5;
+    const centerY = rect.height / 2;
+
+    const rotateX = clamp(((centerY - relY) / centerY) * 10, -10, 10);
+    const rotateY = clamp(((relX - centerX) / centerX) * 10, -10, 10);
+
+    // Offset so card doesn't cover cursor exactly
+    const offsetX = -50;
+    const offsetY = -500;
+
+    setCardStyle({
+      transform: `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`,
+      transition: "transform 0.1s",
+      left: cursorX + offsetX,
+      top: cursorY + offsetY,
+      position: "fixed",
+      pointerEvents: "none",
+      zIndex: 10,
+    });
+  };
+
+  const gridStyles = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gap: "0",
+    border: `1px solid ${borderColor}`,
+    borderRadius: "16px",
+    overflow: "hidden",
+    maxWidth: "1200px",
+    margin: "0 auto",
+    background: "none",
+  };
+
+  const headingStyles = {
+    fontSize: "4rem",
+    fontWeight: 700,
+    lineHeight: 1,
+    padding: "2rem",
+    letterSpacing: "-1px",
+    color: "white",
+    margin: "0",
+    display: "block",
+  };
+
+  const topRowStyles = {
+    gridColumn: "2 / span 1",
+    padding: "2rem",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    borderBottom: `1px solid ${borderColor}`,
+    background: "none",
+  };
+
+  const villasListStyles = {
+    gridColumn: "1 / span 2",
+    background: "none",
+  };
+
+  const villaRowBase = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    alignItems: "center",
+    padding: "2rem 0",
+    cursor: "pointer",
+    transition: "all 0.4s cubic-bezier(.88,.15,.2,.84)",
+    background: "none",
+    position: "relative",
+  };
+
+  const villaNameStyles = (isHovered) => ({
+    fontWeight: 700,
+    fontSize: "1.28rem",
+    color: isHovered ? "black" : "white",
+    paddingLeft: "2rem",
+    transition: "color 0.3s",
+  });
+
+  const villaDescStyles = (isHovered) => ({
+    color: isHovered ? "black" : textColor,
+    transition: "color 0.3s",
+    fontSize: "1rem",
+    fontWeight: 400,
+  });
+
+  const seeMoreStyles = (isHovered) => ({
+    color: isHovered ? "black" : highlightColor,
+    fontSize: "1.1rem",
+    fontWeight: 600,
+    textDecoration: "none",
+    display: "flex",
+    alignItems: "center",
+    transition: "color 0.32s",
+    marginRight: "2rem",
+  });
+
+  const arrowStyles = (isHovered) => ({
+    marginLeft: "0.5rem",
+    fontSize: "1.7rem",
+    transition: "transform 0.42s, color 0.32s",
+    color: isHovered ? "black" : highlightColor,
+    transform: isHovered ? "translateX(8px)" : "translateX(0)",
+  });
+
+  const villaRowHover = {
+    background: highlightColor,
+    boxShadow: "0 4px 20px 0 rgba(227,174,123,0.13)",
+    transform: "scale(1.01)",
+    transition: "all 0.33s cubic-bezier(.77,.1,.18,.96)",
+  };
+
+  const imageCardBaseStyle = {
+    width: "300px",
+    height: "200px",
+    borderRadius: "20px",
+    border: "6px solid white",
+    boxShadow: "0 8px 30px rgba(0,0,0,0.15)",
+    backgroundColor: "white",
+    overflow: "hidden",
+    userSelect: "none",
+  };
+
+  const imgStyle = {
+    height: "100%",
+    width: "100%",
+    objectFit: "cover",
+  };
+
   return (
-    <div className="min-h-screen w-full bg-[#171b19] text-white font-sans px-8 py-20">
-      <div className="max-w-7xl mx-auto grid grid-cols-3 gap-x-8 border border-[#243137] rounded-lg overflow-hidden">
-        {/* Left column - big heading */}
-        <div className="col-span-1 flex items-start justify-start">
-          <h1 className="text-[4rem] font-bold leading-[1] p-8 tracking-tight">
+    <div
+      style={{
+        minHeight: "100vh",
+        width: "100%",
+        background: bgColor,
+        color: "white",
+        fontFamily: "Inter, Arial, sans-serif",
+        padding: "5rem 1rem",
+        position: "relative",
+      }}
+    >
+      <div style={gridStyles}>
+        <div
+          style={{
+            gridColumn: "1 / span 1",
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "flex-start",
+          }}
+        >
+          <h1 style={headingStyles}>
             Realty Chamber
             <br />
             For Every <br /> Solution
           </h1>
         </div>
 
-        {/* Middle/Right top - description & button */}
-        <div className="col-span-2 px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between border-b border-[#243137]">
-          <div>
-            <p
-              className="text-lg text-[#ececec] mb-4 md:mb-0"
-              style={{ maxWidth: "500px" }}
-            >
-              We’re thrilled to announce an exciting motion update for the Realty Chamber website!
-              You’ve seen the design previews, and now we 
-               can’t wait to reveal the full experience coming your way.
+        <div style={topRowStyles}>
+          <div style={{ maxWidth: "520px" }}>
+            <p style={{ color: textColor, fontSize: "1.09rem", margin: "0" }}>
+              We’re thrilled to announce an exciting motion update for the Realty
+              Chamber website! You’ve seen the design previews, and now we can’t
+              wait to reveal the full experience coming your way.
             </p>
           </div>
           <a
             href="#contact"
-            className="border border-[#ececec] text-white px-8 py-2 rounded-full text-lg font-medium
-              hover:bg-[#ececec] hover:text-black 
-              transition-colors duration-300 ease-in-out"
+            style={{
+              border: `1.5px solid ${textColor}`,
+              color: "white",
+              background: "none",
+              padding: "10px 36px",
+              borderRadius: "999px",
+              fontSize: "1.08rem",
+              fontWeight: 500,
+              letterSpacing: "0.05em",
+              marginLeft: "2rem",
+              transition: "background 0.36s, color 0.33s",
+              textDecoration: "none",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = textColor;
+              e.currentTarget.style.color = bgColor;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "none";
+              e.currentTarget.style.color = "white";
+            }}
           >
             Contact Us
           </a>
         </div>
 
-        {/* Villas List - Grid */}
-        <div className="col-span-3 divide-y divide-[#243137]">
-          {villas.map((villa, i) => (
-            <div
-              key={i}
-              className={`
-                grid grid-cols-3 items-center py-8 
-                group cursor-pointer
-                transition-all duration-500 ease-in-out
-                hover:bg-[#e3ae7b] hover:shadow-lg hover:scale-[1.01]
-              `}
-            >
+        <div style={villasListStyles}>
+          {villas.map((villa, index) => {
+            const isHovered = hoveredIndex === index;
+            return (
               <div
-                className="col-span-1 font-bold text-xl pl-8 
-                  transition-colors duration-500 ease-in-out group-hover:text-black"
+                key={index}
+                style={{
+                  ...villaRowBase,
+                  ...(isHovered ? villaRowHover : {}),
+                  borderBottom:
+                    index === villas.length - 1 ? "none" : `1px solid ${borderColor}`,
+                  zIndex: isHovered ? 3 : 1,
+                }}
+                onMouseEnter={() => handleRowEnter(index)}
+                onMouseLeave={handleRowLeave}
+                onMouseMove={isHovered ? handleMouseMove : undefined}
               >
-                {villa.name}
-              </div>
-              <div
-                className="col-span-1 text-[#ececec] 
-                  transition-colors duration-500 ease-in-out group-hover:text-black"
-              >
-                {villa.description}
-              </div>
-              <div className="col-span-1 flex justify-end pr-8">
-                <a
-                  href="#"
-                  className="text-[#e3ae7b] text-lg font-semibold flex items-center
-                    transition-all duration-500 ease-in-out 
-                    group-hover:text-black"
+                <div style={villaNameStyles(isHovered)}>{villa.name}</div>
+                <div style={villaDescStyles(isHovered)}>{villa.description}</div>
+                <div
+                  style={{ display: "flex", justifyContent: "flex-end", paddingRight: "1.25rem" }}
                 >
-                  See More
-                  <span
-                    className="ml-2 text-2xl 
-                      transition-transform duration-500 ease-in-out 
-                      group-hover:text-black group-hover:translate-x-2"
+                  <a href="#" style={seeMoreStyles(isHovered)}>
+                    See More
+                    <span style={arrowStyles(isHovered)}>&rarr;</span>
+                  </a>
+                </div>
+
+                {isHovered && (
+                  <div
+                    style={{
+                      ...imageCardBaseStyle,
+                      position: cardStyle.position,
+                      top: cardStyle.top,
+                      left: cardStyle.left,
+                      transform: cardStyle.transform,
+                      transition: cardStyle.transition,
+                      pointerEvents: "none",
+                      zIndex: 10,
+                    }}
                   >
-                    &rarr;
-                  </span>
-                </a>
+                    <img
+                      src={villa.img}
+                      alt={villa.name}
+                      style={imgStyle}
+                      draggable={false}
+                    />
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
-
 export default Tile;

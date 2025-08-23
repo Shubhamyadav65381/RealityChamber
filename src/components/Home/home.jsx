@@ -217,54 +217,36 @@ const Home = () => {
         <div className="relative w-full flex justify-center items-center h-[300px] md:h-[400px] lg:h-[500px]">
           {/* REALTY */}
           <h1
-            className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-clip-text text-transparent"
+            className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-t from-[#ddbba7] from-0% via-[#bb9462] via-48% to-white to-50% bg-clip-text text-transparent"
             style={{
               fontFamily: "'Playfair Display', serif",
-              marginTop: '-70px',
-              marginLeft: '70px',
-              letterSpacing: '0.005em',
-              lineHeight: '3.2',
-              transform: 'scaleY(1.2)',
-              backgroundImage: `
-                linear-gradient(
-                  to top,
-                  rgba(252, 180, 3, 0.9) 0%,           /* Gold at bottom with some transparency */
-                  rgba(252, 180, 3, 0.4) 34%,          /* Gold fading upwards */
-                  rgba(255, 255, 255, 1) 50%,           /* Pure white starting from 60% to top */
-                  rgba(255, 255, 255, 1) 100%
-                )
-              `,
+              marginTop: "-70px",
+              marginLeft: "70px",
+              letterSpacing: "0.005em",
+              lineHeight: "3.2",
+              transform: "scaleY(1.2)",
             }}
           >
             REALTY
           </h1>
 
+
           {/* CHAMBER overlapping middle */}
     <h2
-  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase text-transparent bg-clip-text"
+  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase text-[#f5ad05] bg-clip-text"
   style={{
-    fontFamily: "'Plus Jakarta Sans', sans-serif",
-    fontWeight: 900,
+    fontFamily: "'Playfair Display', serif",
+    fontWeight: 1200,
     transform: 'translate(-50%,-60%)',
     pointerEvents: 'none',
     letterSpacing: '0em',
     whiteSpace: 'nowrap',
-    marginTop: '80px',
+    marginTop: '70px',
     marginLeft: '-15px',
     backgroundColor: 'transparent',
     padding: 0,
     lineHeight: 1,
     display: 'inline-block',
-    backgroundImage: 'linear-gradient(135deg, #d4af37 0%, #ffec9a 40%, #b58109 80%)', // rich gold gradient
-    textShadow: `
-      0 2px 2px #b58300,     /* dark base shadow */
-      0 5px 5px rgba(255, 224, 102, 0.6), /* soft gold glow */
-      0 1px 0 #ffd54f,       /* highlight edge */
-      0 0 5px #fff9d0,       /* subtle light shimmer */
-      0 10px 12px rgba(181, 129, 9, 0.8)  /* deeper glow for depth */
-    `,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
   }}
 >
   CHAMBER
