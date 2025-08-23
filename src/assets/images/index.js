@@ -13,7 +13,12 @@ import sec_img_four from './sec_img_four.png';
 import card_img_one from './card_img_one.png';
 import card_img_two from './card_img_two.png';
 import card_img_three from './card_img_three.png';
-
+import tile_one from './tile_one.png';
+import tile_two from './tile_two.png';
+import tile_three from './tile_third.png';
+import tile_four from './tile_four.png';
+import tile_five from './tile_five.png';
+import tile_six from './tile_six.png';
 
 export default {
   facebook_bl,
@@ -31,4 +36,10 @@ export default {
   card_img_one,
   card_img_two,
   card_img_three,
+  tile_one,
+  tile_two,
+  tile_three,
+  tile_four,
+  tile_five,
+  tile_six,
 };

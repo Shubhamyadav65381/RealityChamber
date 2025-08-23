@@ -233,7 +233,7 @@ const Home = () => {
 
           {/* CHAMBER overlapping middle */}
     <h2
-  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[90px] font-bold uppercase text-[#f5ad05] bg-clip-text"
+  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[115px] font-bold uppercase text-[#f5ad05] bg-clip-text"
   style={{
     fontFamily: "'Playfair Display', serif",
     fontWeight: 1200,
@@ -241,8 +241,8 @@ const Home = () => {
     pointerEvents: 'none',
     letterSpacing: '0em',
     whiteSpace: 'nowrap',
-    marginTop: '70px',
-    marginLeft: '-15px',
+    marginTop: '74px',
+    marginLeft: '0px',
     backgroundColor: 'transparent',
     padding: 0,
     lineHeight: 1,

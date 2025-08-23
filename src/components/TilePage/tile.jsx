@@ -1,35 +1,36 @@
 import React, { useState } from "react";
+import images from "../../assets/images/index";
 
 const villas = [
   {
     name: "Sell A Property",
     description: "Plots, flats, villas, or offices available for sale with ease.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/683ffef86ef99eac1d7b0e45_1.jpg",
+    img: images.tile_one,
   },
   {
     name: "Purchase A Property",
     description: "Find your ideal residential or commercial property today.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/683fffa34e6b20a22abf9e28_2.jpg",
+    img: images.tile_two,
   },
   {
     name: "Rent A Property",
     description: "Choose from homes or spaces available for rent or lease.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840015e15045b3eb719f6ee_6.jpg",
+    img: images.tile_three,
   },
   {
     name: "Joint Venture",
     description: "Partner with Realty Chamber for growth and collaboration.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840007b208d3b7b8b689626_5.jpg",
+    img: images.tile_four,
   },
   {
     name: "Property Exchange",
     description: "Hassle-free property swaps tailored to your needs.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840000a3741bb8ad7508b80_3.jpg",
+    img: images.tile_five,
   },
   {
     name: "Investors",
     description: "Explore opportunities designed exclusively for investors.",
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/6840004185c356f0b39ad388_4.jpg",
+    img: images.tile_six,
   },
 ];
 
