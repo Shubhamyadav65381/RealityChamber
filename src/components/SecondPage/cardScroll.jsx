@@ -197,6 +197,7 @@ const ExperienceSection = () => {
                       display: "flex",
                       alignItems: "end",
                       justifyContent: "center",
+                      pointerEvents: "none",
                     }}
                   >
                     {/* Stacked Card Shadows */}
@@ -244,6 +245,8 @@ const ExperienceSection = () => {
                       >
                         {/* Card Image */}
                         <div
+                          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
                           style={{
                             width: "100%",
                             height: 250,
@@ -253,8 +256,9 @@ const ExperienceSection = () => {
                             borderRadius: "24px 24px 0 0",
                             marginBottom: -6,
                             border: "12px solid #fff",
-                            borderBottomRightRadius: "28px", // already added
+                            borderBottomRightRadius: "28px", 
                             borderBottomLeftRadius: "28px",
+                            transition: "transform 0.4s ease-in-out", // smooth animation
                           }}
                         />
 

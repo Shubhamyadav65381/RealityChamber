@@ -2,7 +2,7 @@ import React from 'react'
 
 import Home from './components/Home/home.jsx';
 import Second from './components/SecondPage/second.jsx';
-// import ThirdPage from './components/thirdpage/third.jsx';
+import Tile from './components/TilePage/tile.jsx';
 
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
 
       <Home />
       <Second />
-      {/* <ThirdPage /> */}
+      <Tile />
+      
     
     
     </>

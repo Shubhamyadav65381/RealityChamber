@@ -27,7 +27,7 @@ const villas = [
   },
 ];
 
-const ThirdPage = () => {
+const Tile = () => {
   return (
     <div className="min-h-screen w-full bg-[#171b19] text-white font-sans px-8 py-20">
       <div className="max-w-7xl mx-auto grid grid-cols-3 gap-x-8 border border-[#243137] rounded-lg overflow-hidden">
@@ -48,8 +48,8 @@ const ThirdPage = () => {
               style={{ maxWidth: "500px" }}
             >
               We’re thrilled to announce an exciting motion update for the Realty Chamber website!
-               You’ve seen the design previews, and now we
-               can’t wait to reveal the full experience coming your way
+              You’ve seen the design previews, and now we 
+               can’t wait to reveal the full experience coming your way.
             </p>
           </div>
           <a
@@ -111,4 +111,4 @@ const ThirdPage = () => {
   );
 };
 
-export default ThirdPage;
+export default Tile;
