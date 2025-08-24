@@ -259,6 +259,7 @@ const Four = () => {
 
   return (
     <>
+      <FourSecond />
       <GlobalStyles />
       <div
         style={{
@@ -442,7 +443,6 @@ const Four = () => {
           </div>
         </div>
       </div>
-      <FourSecond />
     </>
   );
 };

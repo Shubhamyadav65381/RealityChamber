@@ -29,12 +29,12 @@ const Home = () => {
     <>
       <Navbar />
       {/* Vertical lines overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
-        </div>
+        </div> */}
       {/* address block */}
       <div className="flex justify-between items-start  bg-gradient-to-t from-[#88a0a8] to-[#88A0A8] w-full px-46 pt-16 mt-10">
         {/* LEFT COLUMN: Address block */}
@@ -65,7 +65,7 @@ const Home = () => {
         <div className="flex flex-col items-center w-1/3">{/* Place logo here if needed */}</div>
 
         {/* RIGHT COLUMN: Tagline and sun */}
-        <div className="flex flex-col items-start w-1/3">
+        <div className="flex flex-col items-end mr-6 w-1/3">
           <div className="flex items-center">
             <svg
               className="w-8 h-8 mr-3 ml-[-30px] flex-shrink-0 animate-spin-slow"
@@ -88,9 +88,7 @@ const Home = () => {
               ))}
             </svg>
             <span className="text-white text-lg font-semibold leading-tight" style={{marginLeft:'0px'}}>
-              At Realty Chamber
-              <br />
-              turning real estate into <br /> timeless investments.
+              At Realty Chamber turning real <br />estate into  timeless investments.
             </span>
           </div>
         </div>
@@ -107,12 +105,12 @@ const Home = () => {
         }}
       >
         {/* Vertical lines overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
           <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
-        </div>
+        </div> */}
 
 
         {/* cutout building image which is zoomed on scroll */}

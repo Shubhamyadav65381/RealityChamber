@@ -3,35 +3,37 @@ import images from "../../assets/images/index";
 
 const villas = [
   {
-    name: "Sell A Property",
-    description: "Plots, flats, villas, or offices available for sale with ease.",
-    img: images.tile_one,
-  },
+  name: "Residential",
+  description: "Explore plots, flats, villas, and apartments designed for comfortable living.",
+  img: images.tile_one,
+},
+{
+  name: "Commercial",
+  description: "Discover offices, shops, and business spaces ideal for your enterprise.",
+  img: images.tile_two,
+},
+{
+  name: "Industrial",
+  description: "Choose from warehouses, factories, and industrial spaces for rent or purchase.",
+  img: images.tile_three,
+},
+{
+  name: "Agriculture",
+  description: "Find farmlands and agricultural properties to support your growth and farming needs.",
+  img: images.tile_four,
+},
+
   {
-    name: "Purchase A Property",
-    description: "Find your ideal residential or commercial property today.",
-    img: images.tile_two,
-  },
-  {
-    name: "Rent A Property",
-    description: "Choose from homes or spaces available for rent or lease.",
-    img: images.tile_three,
-  },
-  {
-    name: "Joint Venture",
-    description: "Partner with Realty Chamber for growth and collaboration.",
-    img: images.tile_four,
-  },
-  {
-    name: "Property Exchange",
-    description: "Hassle-free property swaps tailored to your needs.",
-    img: images.tile_five,
-  },
-  {
-    name: "Investors",
-    description: "Explore opportunities designed exclusively for investors.",
-    img: images.tile_six,
-  },
+  name: "Property Exchange",
+  description: "Seamless property swapping solutions for buyers and sellers.",
+  img: images.tile_five,
+},
+{
+  name: "Investors",
+  description: "Exclusive real estate opportunities crafted for smart investors.",
+  img: images.tile_six,
+},
+
 ];
 
 // Color variables for custom styles not covered by Tailwind
@@ -133,8 +135,8 @@ const Tile = () => {
             </p>
           </div>
           <a
-            href="#contact"
-            className="ml-8 rounded-full border px-9 py-2.5 text-[1.08rem] font-medium tracking-wider transition-colors duration-360 ease-in-out"
+            href="#"
+            className="ml-8 rounded-full border px-9 py-2.5 text-[1 rem] font-medium tracking-wider transition-colors duration-360 ease-in-out"
             style={{ borderColor: textColor, color: "white", backgroundColor: "transparent" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = textColor;

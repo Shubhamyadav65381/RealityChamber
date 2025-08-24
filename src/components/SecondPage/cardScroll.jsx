@@ -12,12 +12,11 @@ const dataTabs = [
     cards: [
       {
         link: "#",
-        image:
-          `${images.card_img_two}`,
-        title:
-          "A candlelit culinary escape curated by a private chef beneath the stars.",
-        location: "terrace, dining room",
-        startTimes: "7.00 pm, 9.00 pm",
+        image: `${images.card_img_two}`, // keep same as before
+        name: "Member One",
+        role: "Co-Founder",
+        contact: "+91 9000000000",
+        email: "member1@example.com",
       },
     ],
   },
@@ -26,13 +25,12 @@ const dataTabs = [
     title: "Tab 2",
     cards: [
       {
-        link: "/services/spa-wellness",
-        image:
-          `${images.card_img_one}`,
-        title:
-          "Meditation held just for you in a secluded garden or over water at sunrise.",
-        location: "lake, park, coast",
-        startTimes: "8.00 am; 10.00 am",
+        link: "#",
+        image: `${images.card_img_one}`, // keep same as before
+        name: "Member Two",
+        role: "CMO",
+        contact: "+91 9111111111",
+        email: "member2@example.com",
       },
     ],
   },
@@ -41,18 +39,16 @@ const dataTabs = [
     title: "Tab 3",
     cards: [
       {
-        link: "/services/event-space",
-        image:
-          `${images.card_img_three}`,
-        title:
-          "Elegant venues for weddings, gatherings, or executive retreats.",
-        location: "lawn, rooftop, beach",
-        startTimes: "5.00 pm, 7.00 pm",
+        link: "#",
+        image: `${images.Teams_one}`, // keep same as before
+        name: "Mr Ramlal Narwani",
+        role: "Founder & Chairman of Realty Chamber",
+        contact: " + 91 9829066382 ",
+        email: "narwani1975@gmail.com",
       },
     ],
   },
 ];
-
 
 // ----------------- Constants -----------------
 const buttonColor = "#ffc392";
@@ -87,7 +83,7 @@ const ExperienceSection = () => {
               flexDirection: "column",
               justifyContent: "flex-start",
               width: "100%",
-              height: "100vh",              
+              height: "100vh",
               paddingLeft: 160,
             }}
           >
@@ -96,14 +92,14 @@ const ExperienceSection = () => {
                 className="hero-subtitle"
                 style={{
                   color: "#e67017",
-                  fontWeight: 500,
-                  fontSize: 18,
+                  fontWeight: 700,
+                  fontSize: 20,
                   margin: "0 0 1.5rem 17rem",
                   letterSpacing: "1.5px",
-                  textAlign:"right"
+                  textAlign: "right",
                 }}
               >
-                EXPERIENCE
+                OUR TEAMS
               </h6>
 
               <h2
@@ -115,7 +111,7 @@ const ExperienceSection = () => {
                   color: "#fff",
                   fontWeight: 600,
                   letterSpacing: "0.03em",
-                  textAlign:"right",
+                  textAlign: "right",
                 }}
               >
                 Where Time Becomes Memory
@@ -127,7 +123,7 @@ const ExperienceSection = () => {
                   fontSize: "1.15rem",
                   margin: "2rem 0",
                   maxWidth: 500,
-                  textAlign:"right",
+                  textAlign: "right",
                 }}
               >
                 Step beyond the suite and indulge in unique experiences designed
@@ -135,30 +131,30 @@ const ExperienceSection = () => {
               </p>
 
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <a
-                href="#"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  padding: "0.8rem 2rem",
-                  background: "none",
-                  border: "2px solid #fff",
-                  borderRadius: "2rem",
-                  color: "#fff",
-                  fontSize: "1.3rem",
-                  fontWeight: 500,
-                  textDecoration: "none",
-                  transition: "background 0.2s, color 0.2s",
-                }}
-              >
-                Discover All &nbsp;
-                <img
-                  src={white_arr}
-                  alt="Arrow"
-                  style={{ width: 24, verticalAlign: "middle" }}
-                />
-             </a>
-            </div>
+                <a
+                  href="#"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    padding: "0.8rem 2rem",
+                    background: "none",
+                    border: "2px solid #fff",
+                    borderRadius: "2rem",
+                    color: "#fff",
+                    fontSize: "1.3rem",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    transition: "background 0.2s, color 0.2s",
+                  }}
+                >
+                  Discover All &nbsp;
+                  <img
+                    src={white_arr}
+                    alt="Arrow"
+                    style={{ width: 24, verticalAlign: "middle" }}
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -173,9 +169,7 @@ const ExperienceSection = () => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            >
-            
-
+          >
             {/* Card Slider */}
             <div
               className="card-content w-tab-content"
@@ -229,7 +223,7 @@ const ExperienceSection = () => {
                     {tab.cards.map((card, cid) => (
                       <a
                         key={cid}
-                        href='#'
+                        href="#"
                         className="slider-white-card"
                         style={{
                           position: "relative",
@@ -245,8 +239,12 @@ const ExperienceSection = () => {
                       >
                         {/* Card Image */}
                         <div
-                          onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-                          onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                          onMouseEnter={(e) =>
+                            (e.currentTarget.style.transform = "scale(1.05)")
+                          }
+                          onMouseLeave={(e) =>
+                            (e.currentTarget.style.transform = "scale(1)")
+                          }
                           style={{
                             width: "100%",
                             height: 250,
@@ -256,9 +254,9 @@ const ExperienceSection = () => {
                             borderRadius: "24px 24px 0 0",
                             marginBottom: -6,
                             border: "12px solid #fff",
-                            borderBottomRightRadius: "28px", 
+                            borderBottomRightRadius: "28px",
                             borderBottomLeftRadius: "28px",
-                            transition: "transform 0.4s ease-in-out", // smooth animation
+                            transition: "transform 0.4s ease-in-out",
                           }}
                         />
 
@@ -269,78 +267,45 @@ const ExperienceSection = () => {
                               fontWeight: 700,
                               color: "#1d232c",
                               fontSize: "1.32rem",
-                              marginBottom: "1.2rem",
+                              marginBottom: "1rem",
                             }}
                           >
-                            {card.title}
+                            {card.name}
                           </h4>
 
                           <div
                             style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "flex-end",
+                              fontSize: "1.1rem",
+                              color: "#708090",
+                              marginBottom: "0.8rem",
                             }}
                           >
-                            <div>
-                              <div
-                                style={{
-                                  fontSize: "0.97rem",
-                                  color: "#afbfcf",
-                                  marginBottom: 2,
-                                }}
-                              >
-                                Location:
-                              </div>
-                              <div
-                                style={{
-                                  fontSize: "1.08rem",
-                                  color: "#708090",
-                                }}
-                              >
-                                {card.location}
-                              </div>
+                            <strong>Role:</strong> {card.role}
+                          </div>
 
-                              <div
-                                style={{
-                                  fontSize: "0.97rem",
-                                  color: "#afbfcf",
-                                  margin: "9px 0 4px",
-                                }}
-                              >
-                                Start:
-                              </div>
-                              <div
-                                style={{
-                                  fontSize: "1.08rem",
-                                  color: "#708090",
-                                }}
-                              >
-                                {card.startTimes}
-                              </div>
-                            </div>
+                          <div
+                            style={{
+                              fontSize: "1rem",
+                              color: "#708090",
+                              marginBottom: "0.6rem",
+                            }}
+                          >
+                            <strong>Contact:</strong> {card.contact}
+                          </div>
 
-                            <div
-                              className="card-circle-link"
-                              style={{
-                                width: 58,
-                                height: 58,
-                                background: buttonColor,
-                                borderRadius: "50%",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                boxShadow:
-                                  "0 2px 8px rgba(255,195,146,0.18)",
-                                marginLeft: "1.8rem",
-                              }}
+                          <div
+                            style={{
+                              fontSize: "1rem",
+                              color: "#708090",
+                            }}
+                          >
+                            <strong>Email:</strong>{" "}
+                            <a
+                              href={`mailto:${card.email}`}
+                              style={{ color: "#1d232c", textDecoration: "none" }}
                             >
-                              <img
-                                src={black_dwn}
-                                alt="Arrow"
-                                style={{ width: 35 }}
-                              />
-                            </div>
+                              {card.email}
+                            </a>
                           </div>
                         </div>
                       </a>
@@ -349,7 +314,7 @@ const ExperienceSection = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Tab Navigation Circles */}
             <div
               className="nav-tab w-tab-menu"
@@ -365,50 +330,48 @@ const ExperienceSection = () => {
             >
               {dataTabs.map((tab) => {
                 const isActive = activeTab === tab.id;
-            
-            return (
-            <button
-              key={tab.id}
-              role="tab"
-              aria-selected={isActive}
-              aria-controls={`panel-${tab.id}`}
-              id={`tab-${tab.id}`}
-              onClick={() => setActiveTab(tab.id)}
-              style={{
-                outline: "none",
-                background: "#dae6e6", // always transparent for outer circle
-                width: 25,
-                height: 25,
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                cursor: "pointer",
-                 border: "2px solid rgba(255,255,255,0.6)", // circle border
-                transition: "all 0.25s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "scale(1.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "scale(1)";
-              }}
-            >
-              <div
-                style={{
-                  width: 14,
-                  height: 14,
-                  borderRadius: "50%",
-                  background: isActive ? "#ffffff" : "transparent", // ✅ solid white dot only if active
-                  transition: "background 0.25s ease",
-                }}
-             />
-            </button>
 
-    );
-  })}
-</div>
-
+                return (
+                  <button
+                    key={tab.id}
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`panel-${tab.id}`}
+                    id={`tab-${tab.id}`}
+                    onClick={() => setActiveTab(tab.id)}
+                    style={{
+                      outline: "none",
+                      background: "#dae6e6",
+                      width: 25,
+                      height: 25,
+                      borderRadius: "50%",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      cursor: "pointer",
+                      border: "2px solid rgba(255,255,255,0.6)",
+                      transition: "all 0.25s ease",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.2)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 14,
+                        height: 14,
+                        borderRadius: "50%",
+                        background: isActive ? "#ffffff" : "transparent",
+                        transition: "background 0.25s ease",
+                      }}
+                    />
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
