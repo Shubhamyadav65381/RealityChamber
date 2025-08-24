@@ -189,7 +189,7 @@ const PrevArrow = ({ onClick }) => (
     aria-label="Previous"
     style={{
       background: "none",
-      border: "none",
+      // border: "none",
       cursor: "pointer",
       padding: 0,
       marginRight: 22,
