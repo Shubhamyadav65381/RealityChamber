@@ -129,9 +129,7 @@ const Tile = () => {
               className="text-[1.09rem]"
               style={{ color: textColor, margin: 0 }}
             >
-              We’re thrilled to announce an exciting motion update for the Realty
-              Chamber website! You’ve seen the design previews, and now we can’t
-              wait to reveal the full experience coming your way.
+            We’re thrilled to announce an exciting update for the Realty Chamber website! From residential and commercial to industrial, agricultural, and investor opportunities — we can’t wait to reveal the full experience.
             </p>
           </div>
           <a

@@ -53,7 +53,7 @@ const Second = () => {
 
           <span style={{marginTop:"100px", width:"430px"}} >
             <p className="text-white text-center text-[1.3rem]  md:text-[1.2rem] leading-tight mb-6 max-w-3xl">
-              We have a holistic philosophy which translates into creating a harmonious environment, complemented by wellness services that aim to detoxify and rejuvenate your mind, body.
+              Realty Chamber, guided by Mr. Ramlal Narwani, empowers clients in India and Dubai with reliable, innovative, and ethical real estate solutions that inspire success.
             </p>
             <a
               href="#"

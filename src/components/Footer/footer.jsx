@@ -1,74 +1,162 @@
 import React from "react";
+import images from "../../assets/images/index";
 
-const Footer = () => (
-  <footer className="relative bg-[#0a0e0e] text-white pt-10 pb-16 overflow-hidden isolate">
-    {/* Grid vertical lines (decoration, not interactive)
-    // <div
-    //   aria-hidden="true"
-    //   className="absolute inset-0 pointer-events-none z-0 hidden md:grid grid-cols-5 max-w-6xl mx-auto w-full"
-    // >
-    //   {[...Array(5)].map((_, i) => (
-    //     <div key={i} className="w-px h-full bg-white/10" />
-    //   ))}
-    // </div> */}
+// Reusable Link List Component
+const LinkSection = ({ title, links }) => (
+  <div className="w-1/5 min-w-[200px] flex flex-col space-y-4">
+    <h2 className="text-lg font-bold text-white">{title}</h2>
+    <ul className="flex flex-col space-y-1 text-white/80">
+      {links.map((item, idx) =>
+        item.divider ? (
+          <hr key={idx} className="border-t border-white/30 my-1" />
+        ) : (
+          <li key={idx}>
+            <a href={item.href} className="hover:underline transition-colors">
+              {item.text}
+            </a>
+          </li>
+        )
+      )}
+    </ul>
+  </div>
+);
 
-    {/* Main content grid */}
-    <div className="relative z-10 max-w-6xl mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-14">
-        {/* Left: Site Links */}
-        <nav className="flex flex-col gap-4 text-base md:text-lg font-normal">
-          <a href="#" className="hover:underline focus:underline transition">About us</a>
-          <a href="#" className="hover:underline focus:underline transition">Services</a>
-          <a href="#" className="hover:underline focus:underline transition">Connect us</a>
-        </nav>
+const Footer = () => {
+  const propertyActions = [
+    { href: "sell.php", img: images.i1, text: "Sell A Property" },
+    { href: "purchase.php", img: images.i2, text: "Purchase A Property" },
+    { href: "rent.php", img: images.i3, text: "Rent A Property" },
+    { href: "exchange.php", img: images.i4, text: "Property Exchange" },
+  ];
 
-        {/* Center: Contact Info */}
-        <div className="flex flex-col items-center justify-center text-center gap-3">
-          <a
-            href="tel:+919829066382"
-            className="text-2xl md:text-3xl font-extrabold tracking-wider mb-2"
-            style={{ fontFamily: "Instrument Sans, sans-serif" }}
-          >
-            +91-9829066382 <br /> +91-9982011116
-          </a>
-          <a
-            href="mailto:info@example.com"
-            className="text-[#ffc392] font-bold text-2xl md:text-4xl leading-tight mb-2"
-            style={{ fontFamily: "Instrument Sans, sans-serif" }}
-          >
-            narwani1975@gmail.com  <br />info@realtychamber.com
-          </a>
-          <div className="text-white/70 mt-3 text-[1rem] md:text-base">
-            10/615, Malviya Nagar,<br />
-            Jaipur - 302017, Rajasthan, India
+  const socialLinks = [
+    { href: "https://www.facebook.com/realtychamber/", icon: "facebook" },
+    { href: "https://twitter.com/realtychamber", icon: "twitter" },
+    { href: "https://www.linkedin.com/in/realty-chamber-425b10140/", icon: "linkedin" },
+    { href: "https://www.youtube.com/channel/UCWD-E8S4AJH08QNpKGaaZKA", icon: "youtube-play" },
+    { href: "https://plus.google.com/u/0/116447987424116997903", icon: "google-plus" },
+  ];
+
+  const footerSections = [
+    {
+      title: "Introduction",
+      links: [
+        { href: "intro.htm", text: "About us" },
+        { href: "leadership.htm", text: "Leadership" },
+        { href: "team.htm", text: "Corporate Team" },
+        { divider: true },
+        { href: "vision.htm", text: "Vision & Mission" },
+        { href: "message.htm", text: "Founder's Message" },
+      ],
+    },
+    {
+      title: "Services",
+      links: [
+        { href: "sell.php", text: "Sell A Property" },
+        { href: "purchase.php", text: "Purchase A Property" },
+        { href: "rent.php", text: "Rent A Property" },
+        { href: "payingguest.php", text: "PG" },
+        { href: "exchange.php", text: "Property Exchange" },
+        { href: "jointventure.php", text: "Joint Venture" },
+      ],
+    },
+    {
+      title: "Network",
+      links: [
+        { href: "network.htm", text: "Nation Wide Network" },
+        { href: "agent.htm", text: "Agents" },
+        { href: "profile.htm", text: "Company Profile" },
+        { href: "career.htm", text: "Career @RC" },
+        { href: "casestudy.htm", text: "Case Studies" },
+        { href: "marketanalysis.htm", text: "Market Analysis" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { href: "faq.htm", text: "FAQs" },
+        { href: "sales.htm", text: "Sales Support" },
+        { href: "investors.htm", text: "Investor Relations" },
+        { href: "query.php", text: "Send A Query" },
+        { href: "feedback.php", text: "Feedback" },
+        { href: "contact.htm", text: "Contact" },
+      ],
+    },
+  ];
+
+  return (
+    <footer className="bg-black text-white font-['Roboto',sans-serif] text-sm leading-[1.43]">
+      {/* Top Section */}
+      <div className="py-8 border-b border-white/20">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-center sm:justify-between gap-6">
+          {/* Logo */}
+          <div className="flex flex-col items-center sm:items-start">
+            <img src={images.logo} alt="Company Logo" width={70} height={55} />
+            <p className="font-bold text-[0.9rem]">Your Trusted Realty Partner</p>
+          </div>
+          {/* Property Actions */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {propertyActions.map(({ href, img, text }) => (
+              <div key={href} className="w-[22%] min-w-[160px] text-center">
+                <a href={href} className="block group relative">
+                  <img
+                    src={img}
+                    alt={text}
+                    className="w-full rounded-md object-cover transition duration-300 group-hover:opacity-80"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                    <i className="fa fa-play-circle-o text-4xl text-white" />
+                  </div>
+                </a>
+                <p className="mt-2 font-semibold">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Right: Social Links */}
-        <div className="flex flex-col items-end md:items-end gap-4 text-base md:text-lg font-normal">
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline transition">Facebook</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline transition">Instagram</a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:underline focus:underline transition">Pinterest</a>
+      {/* Footer Widgets (no GroupSites now) */}
+      <div className="py-8 border-b border-white/20">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap gap-8 justify-between">
+          {footerSections.map((section, i) => (
+            <LinkSection key={i} title={section.title} links={section.links} />
+          ))}
         </div>
       </div>
 
-      {/* Bottom Row */}
-      <div className="relative z-10 flex flex-col md:flex-row md:justify-between md:items-center text-sm text-white/70 gap-2">
-        <span>© Reality Chamber. All Rights Reserved. </span>
+      {/* Bottom Section */}
+      <div className="py-3 border-t border-white/20">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-between gap-4 text-xs text-white/80">
+          {/* Social Icons */}
+          <div className="flex space-x-4">
+            {socialLinks.map(({ href, icon }, i) => (
+              <a
+                key={i}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors text-lg"
+              >
+                <i className={`fa fa-${icon}`} />
+              </a>
+            ))}
+          </div>
+          {/* Copyright */}
+          <p>
+            <a
+              href="http://www.blissit.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              All rights reserved. <br />
+              Realty Chamber © 2025
+            </a>
+          </p>
+        </div>
       </div>
-    </div>
-
-    {/* Large "Reality Chamber" text watermark */}
-    <span
-      aria-hidden="true"
-      className="pointer-events-none select-none absolute left-1/2 bottom-6 -translate-x-1/2 text-[8rem] md:text-[12rem] lg:text-[10rem] font-black text-white/[.07] leading-none z-0 whitespace-nowrap"
-      style={{
-        fontFamily: "Instrument Sans, sans-serif",
-      }}
-    >
-      Reality Chamber
-    </span>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

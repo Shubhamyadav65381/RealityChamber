@@ -21,6 +21,11 @@ import tile_five from './tile_five.png';
 import tile_six from './tile_six.png';
 import bg_fourth_last from './bg_fourth_last.png';
 import Teams_one from './Teams_one.png';
+import i1 from './i1.png';
+import i2 from './i2.png';
+import i3 from './i3.png';
+import i4 from './i4.png';
+
 
 export default {
   facebook_bl,
@@ -46,4 +51,8 @@ export default {
   tile_six,
   bg_fourth_last,
   Teams_one,
+  i1,
+  i2,
+  i3,
+  i4,
 };

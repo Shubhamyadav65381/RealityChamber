@@ -126,8 +126,7 @@ const ExperienceSection = () => {
                   textAlign: "right",
                 }}
               >
-                Step beyond the suite and indulge in unique experiences designed
-                to elevate your stay — curated to surprise, soothe, and enchant.
+                Step into excellence and embrace bespoke opportunities designed to enhance wealth — curated to inspire confidence and ease.
               </p>
 
               <div style={{ display: "flex", justifyContent: "flex-end" }}>
