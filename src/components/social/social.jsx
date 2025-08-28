@@ -1,128 +1,60 @@
-import React from 'react';
-import images from '../../assets/images/index';
+import React from "react";
+import images from "../../assets/images/index";
 
 const Social = () => {
   return (
     <div>
-      <div className="absolute left-[7vw] bottom-[8vh] flex space-x-6 z-40">
-        {/* Facebook */}
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative w-14 h-14 rounded-full border-2 border-white bg-transparent hover:bg-white cursor-pointer transition-colors duration-300 flex items-center justify-center"
-        >
-          <div
-            className="relative w-7 h-7"
-            style={{
-              transformStyle: 'preserve-3d',
-              transition: 'transform 0.5s',
-            }}
+      <div className="absolute left-[7vw] bottom-[8vh] flex space-x-6 z-40 bg-base p-4 rounded">
+        {[
+          { href: "#", img: images.facebook_wh, alt: "Facebook" },
+          { href: "#", img: images.inst_wh, alt: "Instagram" },
+          { href: "#", img: images.x_white, alt: "X" },
+        ].map((item, i) => (
+          <a
+            key={i}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative w-14 h-14 flex items-center justify-center rounded-full cursor-pointer bg-base"
           >
-            <img
-              src={images.facebook_wh}
-              alt="Facebook"
-              className="absolute inset-0 w-7 h-7"
-              style={{
-                backfaceVisibility: 'hidden',
-              }}
-            />
-            <img
-              src={images.facebook_bl}
-              alt="Facebook"
-              className="absolute inset-0 w-7 h-7"
-              style={{
-                backfaceVisibility: 'hidden',
-                transform: 'rotateX(180deg)',
-              }}
-            />
-          </div>
-          <style jsx>{`
-            a:hover > div {
-              transform: rotateX(180deg);
-            }
-          `}</style>
-        </a>
+            {/* Static White Circular Border */}
+            <span className="absolute inset-0 rounded-full border-2 border-white"></span>
 
-        {/* Instagram */}
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative w-14 h-14 flex items-center justify-center rounded-full border-2 border-white bg-transparent hover:bg-white cursor-pointer transition-colors duration-300"
-          style={{ boxSizing: 'border-box' }}
-        >
-          <div
-            className="relative w-7 h-7"
-            style={{
-              transformStyle: 'preserve-3d',
-              transition: 'transform 0.5s',
-            }}
-          >
-            <img
-              src={images.inst_wh}
-              alt="Instagram"
-              className="absolute inset-0 w-7 h-7"
+            {/* Full Golden Ring with fading effect */}
+            <span
+              className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 animate-spin-slow"
               style={{
-                backfaceVisibility: 'hidden',
+                background:
+                  "conic-gradient(#FFD700 0deg, rgba(255,215,0,0.6) 90deg, rgba(255,215,0,0.2) 180deg, rgba(255,215,0,0.6) 270deg, #FFD700 360deg)",
+                WebkitMask:
+                  "radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 3px))",
+                mask:
+                  "radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 3px))",
               }}
-            />
-            <img
-              src={images.insta_bl}
-              alt="Instagram"
-              className="absolute inset-0 w-7 h-7"
-              style={{
-                backfaceVisibility: 'hidden',
-                transform: 'rotateX(180deg)',
-              }}
-            />
-          </div>
-          <style jsx>{`
-            a:hover > div {
-              transform: rotateX(180deg);
-            }
-          `}</style>
-        </a>
+            ></span>
 
-        {/* X (Twitter) */}
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group relative w-14 h-14 flex items-center justify-center rounded-full border-2 border-white bg-transparent hover:bg-white cursor-pointer transition-colors duration-300"
-          style={{ boxSizing: 'border-box' }}
-        >
-          <div
-            className="relative w-7 h-7"
-            style={{
-              transformStyle: 'preserve-3d',
-              transition: 'transform 0.5s',
-            }}
-          >
-            <img
-              src={images.x_white}
-              alt="X"
-              className="absolute inset-0 w-7 h-7"
-              style={{
-                backfaceVisibility: 'hidden',
-              }}
-            />
-            <img
-              src={images.x_black}
-              alt="X"
-              className="absolute inset-0 w-7 h-7"
-              style={{
-                backfaceVisibility: 'hidden',
-                transform: 'rotateX(180deg)',
-              }}
-            />
-          </div>
-          <style jsx>{`
-            a:hover > div {
-              transform: rotateX(180deg);
-            }
-          `}</style>
-        </a>
+            {/* Inner Circle */}
+            <span className="absolute inset-[3px] rounded-full bg-base"></span>
+
+            {/* Social Icon */}
+            <img src={item.img} alt={item.alt} className="relative w-7 h-7 z-10" />
+
+            {/* Animation */}
+            <style jsx>{`
+              .animate-spin-slow {
+                animation: spin 2.5s linear infinite;
+              }
+              @keyframes spin {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+            `}</style>
+          </a>
+        ))}
       </div>
     </div>
   );

@@ -25,7 +25,7 @@ import i1 from './i1.png';
 import i2 from './i2.png';
 import i3 from './i3.png';
 import i4 from './i4.png';
-
+import info_dev_second from './info_dev_second.png';
 
 export default {
   facebook_bl,
@@ -55,4 +55,5 @@ export default {
   i2,
   i3,
   i4,
+  info_dev_second,
 };

@@ -116,7 +116,8 @@ const Navbar = () => {
                   fontFamily: "'Playfair Display', serif",
                   fontSize: '34px',
                   color: '#fff',
-                  letterSpacing: '0.3px',
+                  letterSpacing: '4px',
+                  marginLeft: '-5px',
                 }}
               >
                 REALTY
@@ -151,7 +152,7 @@ const Navbar = () => {
               href="#features"
               className="px-6 py-2 rounded-full bg-[#FCC692] text-gray-900 font-semibold text-base flex items-center gap-1 transition hover:bg-[#ffddb0] shadow"
             >
-              Book Now
+              About us
               <svg
                 className="w-5 h-5 ml-1"
                 fill="none"

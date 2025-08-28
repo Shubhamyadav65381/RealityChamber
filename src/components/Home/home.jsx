@@ -3,6 +3,7 @@ import Navbar from '../Navbar/navbar.jsx';
 import Social from '../social/social.jsx';
 import backgroundImg from '../../assets/images/background.png';
 import cutout_building from '../../assets/images/cutout_building.png';
+import images from '../../assets/images/index.js'
 
 const Home = () => {
   const [scale, setScale] = useState(1.35);
@@ -28,15 +29,13 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* Vertical lines overlay */}
-        {/* <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
-          <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
-          <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
-          <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
-        </div> */}
       {/* address block */}
-      <div className="flex justify-between items-start  bg-gradient-to-t from-[#88a0a8] to-[#88A0A8] w-full px-46 pt-16 mt-10">
+      <div 
+        className="flex justify-between items-start w-full px-46 pt-16 mt-10"
+        style={{ backgroundImage: `url(${images.info_dev_second})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        >
+        
+        
         {/* LEFT COLUMN: Address block */}
         <div className="flex flex-col items-start w-1/3">
           <a
@@ -87,7 +86,7 @@ const Home = () => {
                 />
               ))}
             </svg>
-            <span className="text-white text-lg font-semibold leading-tight" style={{marginLeft:'0px'}}>
+            <span className="text-white text-lg font-normal leading-tight" style={{marginLeft:'0px'}}>
               At Realty Chamber turning real <br />estate into  timeless investments.
             </span>
           </div>
@@ -95,7 +94,7 @@ const Home = () => {
       </div>
 
       <section
-        className="w-[screen] h-[139vh] bg-cover bg-center relative scroll-smooth overflow-hidden"
+        className="w-[screen] h-[139vh] bg-cover bg-center relative scroll-smooth overflow-hidden overflow-x-hidden"
         style={{
           backgroundImage: `url(${backgroundImg})`,
           transform: `scale(${scale.background})`,
@@ -218,7 +217,7 @@ const Home = () => {
             className="text-[60px] md:text-[120px] lg:text-[310px] font-bold tracking-tight font-serif select-none leading-none text-center bg-gradient-to-t from-[#ddbba7] from-0% via-[#bb9462] via-48% to-white to-50% bg-clip-text text-transparent"
             style={{
               fontFamily: "'Playfair Display', serif",
-              marginTop: "-70px",
+              marginTop: "-65px",
               marginLeft: "70px",
               letterSpacing: "0.005em",
               lineHeight: "3.2",
@@ -230,28 +229,26 @@ const Home = () => {
 
 
           {/* CHAMBER overlapping middle */}
-    <h2
-  className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[115px] font-bold uppercase text-[#f5ad05] bg-clip-text"
-  style={{
-    fontFamily: "'Playfair Display', serif",
-    fontWeight: 1200,
-    transform: 'translate(-50%,-60%)',
-    pointerEvents: 'none',
-    letterSpacing: '0em',
-    whiteSpace: 'nowrap',
-    marginTop: '74px',
-    marginLeft: '0px',
-    backgroundColor: 'transparent',
-    padding: 0,
-    lineHeight: 1,
-    display: 'inline-block',
-  }}
->
-  CHAMBER
-</h2>
-
-
-
+            <h2
+              className="absolute left-1/2 top-1/2 text-[32px] md:text-[58px] lg:text-[120px] font-bold uppercase text-[#f5ad05] bg-clip-text"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 1200,
+                transform: 'translate(-50%,-60%)',
+                pointerEvents: 'none',
+                letterSpacing: '0em',
+                whiteSpace: 'nowrap',
+                marginTop: '78px',
+                marginLeft: '35px',
+                backgroundColor: 'transparent',
+                padding: 0,
+                lineHeight: 1,
+                display: 'inline-block',
+                
+              }}
+            >
+              CHAMBER
+            </h2>
         </div>
        <Social />
       </section>
