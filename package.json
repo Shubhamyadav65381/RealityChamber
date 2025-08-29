@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@motionone/react": "^10.16.4",
     "clsx": "^2.1.1",
     "motion": "^12.23.12",
     "prop-types": "^15.8.1",
