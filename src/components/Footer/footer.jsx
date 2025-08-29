@@ -44,7 +44,6 @@ const Footer = () => {
         { href: "intro.htm", text: "About us" },
         { href: "leadership.htm", text: "Leadership" },
         { href: "team.htm", text: "Corporate Team" },
-        { divider: true },
         { href: "vision.htm", text: "Vision & Mission" },
         { href: "message.htm", text: "Founder's Message" },
       ],
@@ -55,9 +54,9 @@ const Footer = () => {
         { href: "sell.php", text: "Sell A Property" },
         { href: "purchase.php", text: "Purchase A Property" },
         { href: "rent.php", text: "Rent A Property" },
-        { href: "payingguest.php", text: "PG" },
         { href: "exchange.php", text: "Property Exchange" },
         { href: "jointventure.php", text: "Joint Venture" },
+        { href: "payingguest.php", text: "Investor" },
       ],
     },
     {
@@ -88,7 +87,7 @@ const Footer = () => {
     <footer className="bg-black text-white font-['Roboto',sans-serif] text-sm leading-[1.43]">
       {/* Top Section */}
       <div className="py-8 border-b border-white/20">
-        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-center sm:justify-between gap-6">
+        <div className="container mx-auto px-4 max-w-7xl flex flex-wrap items-center justify-center sm:justify-between gap-6 ml-[-18px]">
           {/* Logo */}
           <div className="flex flex-col items-center sm:items-start">
             <img src={images.logo} alt="Company Logo" width={70} height={55} />
@@ -142,7 +141,7 @@ const Footer = () => {
             ))}
           </div>
           {/* Copyright */}
-          <p>
+          <p className="text-center sm:text-left w-full sm:w-auto">
             <a
               href="http://www.blissit.org"
               target="_blank"

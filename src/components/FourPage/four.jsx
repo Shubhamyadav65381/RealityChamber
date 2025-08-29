@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import FourSecond from "./fourSecond";
-
 
 /* Global variables and custom CSS injected inline */
 const GlobalStyles = () => (
@@ -27,27 +26,16 @@ const GlobalStyles = () => (
       color: var(--primary-dark);
       margin: 0;
     }
-    .slick-slider {
-      position: static;
-    }
-    .slick-dots {
-      bottom: -10px;
-    }
+    .slick-slider { position: static; }
+    .slick-dots { bottom: -10px; }
     .slick-dots li button:before {
       font-size: 13px;
       color: var(--primary-dark);
       opacity: 0.27;
     }
-    .slick-dots li.slick-active button:before {
-      color: var(--primary-dark);
-      opacity: 0.76;
-    }
+    .slick-dots li.slick-active button:before { color: var(--primary-dark); opacity: 0.76; }
     @media (max-width: 900px) {
-      .mirall-review-card {
-        flex-direction: column !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-      }
+      .mirall-review-card { flex-direction: column !important; padding-left: 0 !important; padding-right: 0 !important; }
       .mirall-card-left {
         border-right: none !important;
         border-bottom: 1px solid rgba(10,14,14,0.07) !important;
@@ -57,27 +45,13 @@ const GlobalStyles = () => (
         gap: 22px;
         min-width: 0 !important;
       }
-      .mirall-card-right {
-        padding: 32px 20px 28px 24px !important;
-      }
-      .mirall-arrows-row {
-        margin-top: 34px !important;
-      }
+      .mirall-card-right { padding: 32px 20px 28px 24px !important; }
+      .mirall-arrows-row { margin-top: 34px !important; }
     }
     @media (max-width: 700px) {
-      .mirall-slider-container {
-        max-width: 99vw !important;
-        min-width: 0 !important;
-        width: 99vw !important;
-      }
-      .mirall-review-card {
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        padding: 0 !important;
-      }
-      .mirall-card-left {
-        padding-left: 18px !important;
-      }
+      .mirall-slider-container { max-width: 99vw !important; min-width: 0 !important; width: 99vw !important; }
+      .mirall-review-card { margin-right: 0 !important; margin-left: 0 !important; padding: 0 !important; }
+      .mirall-card-left { padding-left: 18px !important; }
     }
   `}</style>
 );
@@ -148,99 +122,16 @@ const CardBGVector = () => (
       zIndex: 0,
     }}
   >
-    <path
-      d="M183.727 108.121L143.642 84.0255V41.8346L183.727 17.7392V108.121Z"
-      stroke="#0a0e0e"
-      strokeWidth="2"
-      strokeOpacity="0.12"
-    />
-    <path
-      d="M143.642 1.20837L104.447 24.8017L64.3622 1.20837L104.447 -22.385L143.642 1.20837Z"
-      stroke="#0a0e0e"
-      strokeWidth="2"
-      strokeOpacity="0.12"
-    />
-    <path
-      d="M143.642 126.271L104.447 149.864L64.3622 126.271L104.447 102.678L143.642 126.271Z"
-      stroke="#0a0e0e"
-      strokeWidth="2"
-      strokeOpacity="0.12"
-    />
-    <path
-      d="M65 41V85.5M143 41V85.5M104.5 103V150"
-      stroke="#0a0e0e"
-      strokeWidth="2"
-      strokeOpacity="0.12"
-    />
+    <path d="M183.727 108.121L143.642 84.0255V41.8346L183.727 17.7392V108.121Z" stroke="#0a0e0e" strokeWidth="2" strokeOpacity="0.12"/>
+    <path d="M143.642 1.20837L104.447 24.8017L64.3622 1.20837L104.447 -22.385L143.642 1.20837Z" stroke="#0a0e0e" strokeWidth="2" strokeOpacity="0.12"/>
+    <path d="M143.642 126.271L104.447 149.864L64.3622 126.271L104.447 102.678L143.642 126.271Z" stroke="#0a0e0e" strokeWidth="2" strokeOpacity="0.12"/>
+    <path d="M65 41V85.5M143 41V85.5M104.5 103V150" stroke="#0a0e0e" strokeWidth="2" strokeOpacity="0.12"/>
   </svg>
-);
-
-const QuoteSVG = () => (
-  <svg width="48" height="44" viewBox="0 0 48 44" fill="none" style={{ display: "block" }}>
-    <text x="0" y="36" fontFamily="inherit" fontWeight="bold" fontSize="64" fill="#0a0e0e">
-      &ldquo;
-    </text>
-  </svg>
-);
-
-const PrevArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    aria-label="Previous"
-    style={{
-      background: "none",
-      // border: "none",
-      cursor: "pointer",
-      padding: 0,
-      marginRight: 22,
-      width: 56,
-      height: 56,
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      outline: "none",
-      boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
-      backgroundColor: "var(--peach-bg)",
-      border: "1.5px solid #0a0e0e",
-      transition: "box-shadow 0.15s"
-    }}>
-    <svg width="32" height="32" viewBox="0 0 32 32">
-      <circle cx="16" cy="16" r="15" fill="none" />
-      <path d="M19.5 23L13.5 16L19.5 9" stroke="#0a0e0e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </button>
-);
-
-const NextArrow = ({ onClick }) => (
-  <button
-    onClick={onClick}
-    aria-label="Next"
-    style={{
-      background: "#0a0e0e",
-      border: "none",
-      cursor: "pointer",
-      padding: 0,
-      marginLeft: 22,
-      width: 56,
-      height: 56,
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      outline: "none",
-      boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
-      transition: "box-shadow 0.15s"
-    }}>
-    <svg width="32" height="32" viewBox="0 0 32 32">
-      <circle cx="16" cy="16" r="16" fill="#0a0e0e" />
-      <path d="M12.5 23L18.5 16L12.5 9" stroke="#FFC392" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </button>
 );
 
 const Four = () => {
   const sliderRef = React.useRef();
+  const [mobileIndex, setMobileIndex] = useState(0);
 
   const sliderSettings = {
     dots: false,
@@ -253,198 +144,413 @@ const Four = () => {
     swipe: true,
   };
 
-  // Slider controls for bottom arrows
+  // Slider controls for desktop
   const goToPrev = () => sliderRef.current && sliderRef.current.slickPrev();
   const goToNext = () => sliderRef.current && sliderRef.current.slickNext();
+
+  // Mobile navigation
+  const goToPrevMobile = () =>
+    setMobileIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+  const goToNextMobile = () =>
+    setMobileIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
 
   return (
     <>
       <FourSecond />
       <GlobalStyles />
-      <div
-        style={{
-          minHeight: "100vh",
-          background: "var(--light-bg)",
-          padding: "80px 0 0 0",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {/* Heading */}
-        <h1
+
+      {/* Desktop/laptop - original code, UNCHANGED */}
+      <div className="hidden sm:block">
+        <div
           style={{
-            maxWidth: "900px",
-            fontWeight: 700,
-            fontSize: "clamp(3.3rem,3vw,3.3rem)",
-            lineHeight: 1.15,
-            letterSpacing: "-1px",
-            color: "#fff",
-            marginBottom: 76,
-            textAlign: "center",
-            userSelect: "none",
+            minHeight: "100vh",
+            background: "var(--light-bg)",
+            padding: "80px 0 0 0",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          Come As You Are And We Will <br />
-          Take Care Of The Rest
-        </h1>
-
-        {/* Slider Card */}
-        <div className="mirall-slider-container" style={{
-          maxWidth: 1190,
-          width: "80vw",
-          minWidth: 320,
-        }}>
-          <Slider ref={sliderRef} {...sliderSettings}>
-            {reviews.map((review) => (
-              <div key={review.id}>
-                <section
-                  className="mirall-review-card"
-                  style={{
-                    display: "flex",
-                    boxShadow: "var(--peach-shadow)",
-                    background: "var(--peach-bg)",
-                    borderRadius: "var(--card-radius)",
-                    minHeight: 468,
-                    margin: "0 14px",
-                    overflow: "hidden",
-                    position: "relative",
-                    padding: "0",
-                  }}
-                >
-                  <CardBGVector />
-
-                  {/* LEFT: Client list */}
-                  <aside
-                    className="mirall-card-left"
-                    style={{
-                      minWidth: 264,
-                      maxWidth: 275,
-                      borderRight: "1px solid rgba(10,14,14,0.07)",
-                      padding: "48px 34px 32px 46px",
-                      boxSizing: "border-box",
-                      display: "flex",
-                      flexDirection: "column",
-                      background: "none",
-                      zIndex: 2,
-                    }}
-                  >
-                    {review.clientNames.map(({ name, active }, i) => (
-                      <div
-                        key={name}
-                        style={{
-                          margin: "0 0 10px 0",
-                          fontWeight: active ? 600 : 400,
-                          fontSize: "1.1rem",
-                          color: active ? "var(--primary-dark)" : "var(--client-inactive)",
-                          borderBottom: active ? "2px solid var(--client-underline)" : "2px solid transparent",
-                          paddingBottom: 7,
-                          transition: "all .22s",
-                          fontFamily: "inherit",
-                          letterSpacing: "-0.01em",
-                          lineHeight: 1.1,
-                          cursor: active ? "default" : "pointer"
-                        }}
-                      >
-                        {name}
-                      </div>
-                    ))}
-                  </aside>
-
-                  {/* RIGHT: Review content */}
-                  <main
-                    className="mirall-card-right"
-                    style={{
-                      flex: 1,
-                      minWidth: 0,
-                      padding: "56px 54px 32px 58px",
-                      position: "relative",
-                      zIndex: 2,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                    }}
-                  >
-                    <div style={{ display: "flex", alignItems: "flex-start", gap: 24 }}>
-                      {/* Large Quote Mark */}
-                      <span
-                        aria-hidden="true"
-                        style={{
-                          display: "block",
-                          fontSize: "var(--quote-size)",
-                          fontWeight: 900,
-                          color: "var(--primary-dark)",
-                          marginTop: "-4px",
-                          fontFamily: "serif",
-                          lineHeight: 1,
-                        }}
-                      >
-                        &ldquo;
-                      </span>
-                      <p
-                        style={{
-                          fontSize: 32,
-                          fontStyle: "italic",
-                          color: "var(--primary-dark)",
-                          marginTop: 15,
-                          fontWeight: 400,
-                          lineHeight: 1.37,
-                          letterSpacing: "-0.01em"
-                        }}
-                      >
-                        {review.text}
-                      </p>
-                    </div>
-
-                    {/* Bottom Row: Rating */}
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "flex-start",
-                        alignItems: "flex-end",
-                        height: 56,
-                        marginTop: "auto",
-                        position: "relative"
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontSize: 18,
-                          color: "var(--primary-dark)",
-                          fontWeight: 400,
-                          userSelect: "none"
-                        }}
-                      >
-                        Reviews : {review.rating}
-                      </span>
-                    </div>
-                  </main>
-                </section>
-              </div>
-            ))}
-          </Slider>
-
-          {/* ARROW ROW OUTSIDE CARD */}
-          <div
-            className="mirall-arrows-row"
+          {/* Heading */}
+          <h1
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 6,
-              width: "100%",
-              margin: "38px 0 0 0",
-              position: "relative",
-              zIndex: 11,
+              maxWidth: "900px",
+              fontWeight: 700,
+              fontSize: "clamp(3.3rem,3vw,3.3rem)",
+              lineHeight: 1.15,
+              letterSpacing: "-1px",
+              color: "#fff",
+              marginBottom: 76,
+              textAlign: "center",
+              userSelect: "none",
             }}
           >
-            <PrevArrow onClick={goToPrev} />
-            <NextArrow onClick={goToNext} />
+            Come As You Are And We Will <br />
+            Take Care Of The Rest
+          </h1>
+          {/* Original slider and reviews */}
+          <div className="mirall-slider-container" style={{
+            maxWidth: 1190,
+            width: "80vw",
+            minWidth: 320,
+          }}>
+            <Slider ref={sliderRef} {...sliderSettings}>
+              {reviews.map((review) => (
+                <div key={review.id}>
+                  <section className="mirall-review-card"
+                    style={{
+                      display: "flex",
+                      boxShadow: "var(--peach-shadow)",
+                      background: "var(--peach-bg)",
+                      borderRadius: "var(--card-radius)",
+                      minHeight: 468,
+                      margin: "0 14px",
+                      overflow: "hidden",
+                      position: "relative",
+                      padding: "0",
+                    }}>
+                    <CardBGVector />
+                    {/* LEFT: Client list */}
+                    <aside className="mirall-card-left"
+                      style={{
+                        minWidth: 264,
+                        maxWidth: 275,
+                        borderRight: "1px solid rgba(10,14,14,0.07)",
+                        padding: "48px 34px 32px 46px",
+                        boxSizing: "border-box",
+                        display: "flex",
+                        flexDirection: "column",
+                        background: "none",
+                        zIndex: 2,
+                      }}>
+                      {review.clientNames.map(({ name, active }, i) => (
+                        <div
+                          key={name}
+                          style={{
+                            margin: "0 0 10px 0",
+                            fontWeight: active ? 600 : 400,
+                            fontSize: "1.1rem",
+                            color: active ? "var(--primary-dark)" : "var(--client-inactive)",
+                            borderBottom: active ? "2px solid var(--client-underline)" : "2px solid transparent",
+                            paddingBottom: 7,
+                            transition: "all .22s",
+                            fontFamily: "inherit",
+                            letterSpacing: "-0.01em",
+                            lineHeight: 1.1,
+                            cursor: active ? "default" : "pointer"
+                          }}
+                        >
+                          {name}
+                        </div>
+                      ))}
+                    </aside>
+                    {/* RIGHT: Review content */}
+                    <main className="mirall-card-right"
+                      style={{
+                        flex: 1,
+                        minWidth: 0,
+                        padding: "56px 54px 32px 58px",
+                        position: "relative",
+                        zIndex: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "flex-start",
+                      }}>
+                      <div style={{ display: "flex", alignItems: "flex-start", gap: 24 }}>
+                        {/* Large Quote Mark */}
+                        <span
+                          aria-hidden="true"
+                          style={{
+                            display: "block",
+                            fontSize: "var(--quote-size)",
+                            fontWeight: 900,
+                            color: "var(--primary-dark)",
+                            marginTop: "-4px",
+                            fontFamily: "serif",
+                            lineHeight: 1,
+                          }}>
+                          &ldquo;
+                        </span>
+                        <p
+                          style={{
+                            fontSize: 32,
+                            fontStyle: "italic",
+                            color: "var(--primary-dark)",
+                            marginTop: 15,
+                            fontWeight: 400,
+                            lineHeight: 1.37,
+                            letterSpacing: "-0.01em"
+                          }}>
+                          {review.text}
+                        </p>
+                      </div>
+                      {/* Bottom Row: Rating */}
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "flex-start",
+                          alignItems: "flex-end",
+                          height: 56,
+                          marginTop: "auto",
+                          position: "relative"
+                        }}>
+                        <span
+                          style={{
+                            fontSize: 18,
+                            color: "var(--primary-dark)",
+                            fontWeight: 400,
+                            userSelect: "none"
+                          }}
+                        >
+                          Reviews : {review.rating}
+                        </span>
+                      </div>
+                    </main>
+                  </section>
+                </div>
+              ))}
+            </Slider>
+            {/* ARROW ROW OUTSIDE CARD */}
+            <div className="mirall-arrows-row"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 6,
+                width: "100%",
+                margin: "38px 0 0 0",
+                position: "relative",
+                zIndex: 11,
+              }}>
+              <button
+                onClick={goToPrev}
+                aria-label="Previous"
+                style={{
+                  background: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  marginRight: 22,
+                  width: 56,
+                  height: 56,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  outline: "none",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
+                  backgroundColor: "var(--peach-bg)",
+                  border: "1.5px solid #0a0e0e",
+                  transition: "box-shadow 0.15s"
+                }}>
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                  <circle cx="16" cy="16" r="15" fill="none" />
+                  <path d="M19.5 23L13.5 16L19.5 9" stroke="#0a0e0e" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                onClick={goToNext}
+                aria-label="Next"
+                style={{
+                  background: "#0a0e0e",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  marginLeft: 22,
+                  width: 56,
+                  height: 56,
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  outline: "none",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.07)",
+                  transition: "box-shadow 0.15s"
+                }}>
+                <svg width="32" height="32" viewBox="0 0 32 32">
+                  <circle cx="16" cy="16" r="16" fill="#0a0e0e" />
+                  <path d="M12.5 23L18.5 16L12.5 9" stroke="#FFC392" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile layout (only visible on <640px) */}
+      <div className="block sm:hidden" style={{
+        minHeight: "100vh",
+        background: "var(--light-bg)",
+        padding: "20px",
+        boxSizing: "border-box",
+        overflowY: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        userSelect: "none",
+      }}>
+        <h1
+          style={{
+            color: "#fff",
+            textAlign: "center",
+            fontSize: "2rem",
+            fontWeight: 700,
+            marginBottom: "24px",
+            marginTop: 8,
+            lineHeight: 1.15,
+          }}
+        >
+          Come As You Are <br />
+          And We Will Take <br />
+          Care Of The Rest
+        </h1>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "410px",
+            background: "var(--peach-bg)",
+            borderRadius: "28px",
+            boxShadow: "0 10px 30px 0 rgba(55,54,54,0.11)",
+            padding: "22px 16px 28px 16px",
+            marginBottom: "28px",
+            marginTop: "8px",
+            position: "relative",
+            minHeight: "410px",
+            display: "flex",
+            flexDirection: "column"
+          }}>
+          {/* Client list */}
+          <div style={{
+            borderBottom: "1px solid #0a0e0e16",
+            marginBottom: "12px",
+            paddingBottom: "4px",
+            fontSize: "1rem",
+            fontWeight: 400,
+            color: "#0a0e0e",
+            opacity: 0.8,
+            display: "flex",
+            gap: "12px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}>
+            {reviews[mobileIndex].clientNames.map(({ name, active }) => (
+              <div
+                key={name}
+                style={{
+                  fontWeight: active ? 700 : 400,
+                  color: active ? "#0a0e0e" : "#666",
+                  borderBottom: active ? "2px solid #0a0e0e" : "none",
+                  opacity: active ? 1 : 0.6,
+                  padding: "0 8px 3px 8px",
+                  fontSize: "1rem",
+                  borderRadius: 4,
+                  cursor: active ? "default" : "pointer",
+                  whiteSpace: "nowrap",
+                  textAlign: "center",
+                }}>
+                {name}
+              </div>
+            ))}
+          </div>
+          {/* Rating */}
+          <div style={{
+            fontSize: "1rem",
+            color: "#0a0e0e",
+            fontWeight: 500,
+            marginBottom: "10px",
+            userSelect: "none",
+            textAlign: "center",
+          }}>
+            Reviews : {reviews[mobileIndex].rating}
+          </div>
+          {/* Large quote mark */}
+          <div style={{
+            fontSize: "2.3rem",
+            fontWeight: 900,
+            color: "#0a0e0e",
+            marginTop: "10px",
+            marginBottom: "8px",
+            textAlign: "left"
+          }}>
+            &ldquo;
+          </div>
+          {/* Review text */}
+          <div style={{
+            fontStyle: "italic",
+            color: "#0a0e0e",
+            fontSize: "1.17rem",
+            lineHeight: 1.44,
+            fontWeight: 400,
+            marginBottom: "auto",
+            textAlign: "left",
+          }}>
+            {reviews[mobileIndex].text}
+          </div>
+          {/* Mobile Slide Arrows */}
+          <div style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "32px",
+            gap: "10px",
+          }}>
+            <button
+              onClick={goToPrevMobile}
+              aria-label="Previous"
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                border: "1.5px solid #0a0e0e",
+                background: "var(--peach-bg)",
+                color: "#0a0e0e",
+                fontSize: 22,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 8px",
+                cursor: "pointer",
+              }}>
+              <svg width="24" height="24" viewBox="0 0 28 28">
+                <path
+                  d="M17 14H10m0 0 3-3m-3 3 3 3"
+                  stroke="#0a0e0e"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              onClick={goToNextMobile}
+              aria-label="Next"
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: "50%",
+                border: "1.5px solid #0a0e0e",
+                background: "#0a0e0e",
+                color: "#ffc392",
+                fontSize: 22,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                margin: "0 8px",
+                cursor: "pointer",
+              }}>
+              <svg width="24" height="24" viewBox="0 0 28 28">
+                <path
+                  d="M10 14h7m0 0-3-3m3 3-3 3"
+                  stroke="#ffc392"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </>
   );
 };
-
 export default Four;

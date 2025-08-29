@@ -291,10 +291,9 @@ const tabData = [
   },
 ];
 
-// Arrow SVG for the card and button
 const ArrowIcon = ({ fill = "#0a0e0e" }) => (
   <svg fill="none" viewBox="0 0 28 28" width="45" height="45">
-    <circle cx="14" cy="14" r="14" fill="none"/>
+    <circle cx="14" cy="14" r="14" fill="none" />
     <path d="M10 14h7m0 0-3-3m3 3-3 3" stroke={fill} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
@@ -306,7 +305,8 @@ const FourSecond = () => {
   return (
     <>
       <GlobalStyles />
-      <div style={{ minHeight: "100vh", background: "var(--light-bg)" }}>
+      {/* DESKTOP/LAPTOP layout (unchanged) */}
+      <div className="hidden sm:block" style={{ minHeight: "100vh", background: "var(--light-bg)" }}>
         <div className="fs_sliderGrid">
           <div>
             {/* Award Row */}
@@ -317,7 +317,7 @@ const FourSecond = () => {
                 alt="Star"
                 loading="lazy"
               />
-              <span className="fs_award_text">Michelin<br/>2025</span>
+              <span className="fs_award_text">Michelin<br />2025</span>
             </div>
             {/* Tabs */}
             <div className="fs_tabs_row">
@@ -351,17 +351,114 @@ const FourSecond = () => {
           </div>
           {/* RIGHT SIDE */}
           <div className="fs_right_box">
-            <h2 className="fs_r_title">Arrive Freely<br/>We’ll Handle <wbr/>The Rest</h2>
+            <h2 className="fs_r_title">Arrive Freely<br />We’ll Handle <wbr />The Rest</h2>
             <p className="fs_r_txt">
               The Michelin-starred Mirall restaurant, created from the ancient lemon house of Villa Baracchi, has an elegant indoor dining room and a striking panoramic terrace that overlooks Cortona and its hills.
             </p>
-            <a
-              href="/about-us"
-              className="fs_r_btn"
-              tabIndex={0}
+            <a href="/about-us" className="fs_r_btn" tabIndex={0}>Read Here <ArrowIcon fill="currentColor" /></a>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE layout (only below 640px) */}
+      <div className="block sm:hidden" style={{ minHeight: '100vh', background: 'var(--light-bg)', padding: '16px' }}>
+        {/* Michelin Row */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+          <img
+            src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684037c8bae72fccbf5a33e0_Group%20300.svg"
+            alt="Star"
+            style={{ width: '36px', height: '36px', objectFit: 'contain' }}
+          />
+          <span style={{ fontWeight: 700, fontSize: '1.3rem', color: 'var(--primary-dark)' }}>
+            Michelin 2025
+          </span>
+        </div>
+        {/* Tabs */}
+        <div style={{ display: 'flex', flexWrap:'wrap', gap: '12px', marginBottom: '18px', justifyContent: 'center' }}>
+          {tabData.map(tab => (
+            <button
+              key={tab.key}
+              type="button"
+              style={{
+                border: 'none',
+                background: activeTab === tab.key ? 'var(--primary-dark)' : '#fff2',
+                color: activeTab === tab.key ? '#fff' : 'var(--primary-dark)',
+                fontWeight: 500,
+                borderRadius: '9999px',
+                padding: '8px 22px',
+                minWidth: '110px',
+                fontSize: '1.12rem',
+                boxShadow: activeTab === tab.key ? '0 0 0 2.7px var(--primary-dark) inset' : '0 0 0 1.5px var(--primary-dark) inset',
+                cursor: 'pointer',
+                opacity: activeTab === tab.key ? 1 : 0.93,
+              }}
+              onClick={() => setActiveTab(tab.key)}
+              aria-selected={activeTab === tab.key}
             >
-              Read Here
-              <ArrowIcon fill="currentColor" />
+              {tab.title}
+            </button>
+          ))}
+        </div>
+        {/* Card */}
+        <div style={{
+          background: '#fff',
+          borderRadius: '20px',
+          boxShadow: '0 4px 28px rgba(16,40,59,0.13)',
+          padding: '0 0 22px 0',
+          maxWidth: '380px',
+          margin: '0 auto 15px auto',
+          display: 'flex',
+          flexDirection: 'column',
+        }}>
+          <div style={{ width: '100%', aspectRatio: '1.7/1', borderRadius: '20px 20px 0 0', overflow: 'hidden', display: 'block', background: '#ededed' }}>
+            <img src={active.image} alt={active.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          </div>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '10px',
+            justifyContent: 'flex-start',
+            fontFamily: 'inherit',
+            padding: '18px 14px 10px 14px',
+            marginTop: '10px'
+          }}>
+            <span style={{
+              fontWeight: 500,
+              fontSize: '1rem',
+              color: 'var(--primary)',
+              opacity: 0.95,
+              letterSpacing: 0.5,
+              marginTop: '3px'
+            }}>{active.label}</span>
+            <span style={{
+              fontWeight: 700,
+              color: 'var(--primary-dark)',
+              fontSize: '1.11rem',
+              letterSpacing: '-.01em',
+              textAlign: 'center',
+              lineHeight: 1.35
+            }}>{active.desc}</span>
+          </div>
+          <div style={{
+            display: 'flex', width: '100%', justifyContent: 'center', alignItems: 'center', marginTop: '18px', marginBottom: '-14px'
+          }}>
+            <a href={active.btnLink} tabIndex={0} style={{
+              width: '48px',
+              height: '48px',
+              borderRadius: '50%',
+              background: 'var(--light-peach)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              outline: 'none',
+              cursor: 'pointer',
+              transition: 'background .17s',
+              boxShadow: '0 2px 10px #0001',
+              fontSize: '1.36rem'
+            }}>
+              <ArrowIcon fill="#0a0e0e"/>
             </a>
           </div>
         </div>

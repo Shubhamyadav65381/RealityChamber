@@ -3,40 +3,37 @@ import images from "../../assets/images/index";
 
 const villas = [
   {
-  name: "Residential",
-  description: "Explore plots, flats, villas, and apartments designed for comfortable living.",
-  img: images.tile_one,
-},
-{
-  name: "Commercial",
-  description: "Discover offices, shops, and business spaces ideal for your enterprise.",
-  img: images.tile_two,
-},
-{
-  name: "Industrial",
-  description: "Choose from warehouses, factories, and industrial spaces for rent or purchase.",
-  img: images.tile_three,
-},
-{
-  name: "Agriculture",
-  description: "Find farmlands and agricultural properties to support your growth and farming needs.",
-  img: images.tile_four,
-},
-
+    name: "Residential",
+    description: "Explore plots, flats, villas, and apartments designed for comfortable living.",
+    img: images.tile_one,
+  },
   {
-  name: "Property Exchange",
-  description: "Seamless property swapping solutions for buyers and sellers.",
-  img: images.tile_five,
-},
-{
-  name: "Investors",
-  description: "Exclusive real estate opportunities crafted for smart investors.",
-  img: images.tile_six,
-},
-
+    name: "Commercial",
+    description: "Discover offices, shops, and business spaces ideal for your enterprise.",
+    img: images.tile_two,
+  },
+  {
+    name: "Industrial",
+    description: "Choose from warehouses, factories, and industrial spaces for rent or purchase.",
+    img: images.tile_three,
+  },
+  {
+    name: "Agriculture",
+    description: "Find farmlands and agricultural properties to support your growth and farming needs.",
+    img: images.tile_four,
+  },
+  {
+    name: "Property Exchange",
+    description: "Seamless property swapping solutions for buyers and sellers.",
+    img: images.tile_five,
+  },
+  {
+    name: "Investors",
+    description: "Exclusive real estate opportunities crafted for smart investors.",
+    img: images.tile_six,
+  },
 ];
 
-// Color variables for custom styles not covered by Tailwind
 const bgColor = "#171b19";
 const borderColor = "#243137";
 const highlightColor = "#e3ae7b";
@@ -75,20 +72,15 @@ const Tile = () => {
   const handleMouseMove = (e) => {
     const cursorX = e.clientX;
     const cursorY = e.clientY;
-
     const rect = e.currentTarget.getBoundingClientRect();
     const relX = cursorX - rect.left;
     const relY = cursorY - rect.top;
     const centerX = rect.width / 5;
     const centerY = rect.height / 2;
-
     const rotateX = clamp(((centerY - relY) / centerY) * 10, -10, 10);
     const rotateY = clamp(((relX - centerX) / centerX) * 10, -10, 10);
-
-    // Offset so card doesn't cover cursor exactly
     const offsetX = -50;
     const offsetY = -500;
-
     setCardStyle({
       transform: `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.08)`,
       transition: "transform 0.1s",
@@ -101,134 +93,153 @@ const Tile = () => {
   };
 
   return (
-    <div
-      className="min-h-screen w-full px-4 py-20 font-sans relative"
-      style={{ backgroundColor: bgColor, color: "white", fontFamily: "Inter, Arial, sans-serif" }}
-    >
-      <div
-        className="grid max-w-[1200px] mx-auto rounded-[16px] border"
-        style={{ gridTemplateColumns: "1fr 1fr", borderColor: borderColor }}
-      >
-        <div className="col-span-1 flex items-start justify-start p-8">
-          <h1
-            className="text-[4rem] font-bold leading-none -tracking-[1px] text-white"
-            style={{ margin: 0 }}
-          >
-            Realty Chamber
-            <br />
-            For Every <br /> Solution
-          </h1>
-        </div>
-
-        <div
-          className="flex col-start-2 p-8 border-b items-center justify-between"
-          style={{ borderColor: borderColor }}
-        >
-          <div className="max-w-[520px]">
-            <p
-              className="text-[1.09rem]"
-              style={{ color: textColor, margin: 0 }}
-            >
-            We’re thrilled to announce an exciting update for the Realty Chamber website! From residential and commercial to industrial, agricultural, and investor opportunities — we can’t wait to reveal the full experience.
-            </p>
+    <>
+      {/* Desktop/Laptop Layout - Original Code (visible from 640px+) */}
+      <div className="hidden sm:block min-h-screen w-full px-4 py-20 font-sans relative" style={{ backgroundColor: bgColor, color: "white", fontFamily: "Inter, Arial, sans-serif" }}>
+        <div className="grid max-w-[1200px] mx-auto rounded-[16px] border" style={{ gridTemplateColumns: "1fr 1fr", borderColor }}>
+          <div className="col-span-1 flex items-start justify-start p-8">
+            <h1 className="text-[4rem] font-bold leading-none -tracking-[1px] text-white" style={{ margin: 0 }}>
+              Realty Chamber
+              <br />
+              For Every <br /> Solution
+            </h1>
           </div>
-          <a
+
+          <div className="flex col-start-2 p-8 border-b items-center justify-between" style={{ borderColor }}>
+            <div className="max-w-[520px]">
+              <p className="text-[1.09rem]" style={{ color: textColor, margin: 0 }}>
+                We’re thrilled to announce an exciting update for the Realty Chamber website! From residential and commercial to industrial, agricultural, and investor opportunities — we can’t wait to reveal the full experience.
+              </p>
+            </div>
+            <a
+              href="#"
+              className="ml-8 rounded-full border px-9 py-2.5 text-[1 rem] font-medium tracking-wider transition-colors duration-360 ease-in-out"
+              style={{ borderColor: textColor, color: "white", backgroundColor: "transparent" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = textColor;
+                e.currentTarget.style.color = bgColor;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = "white";
+              }}
+            >
+              Contact Us
+            </a>
+          </div>
+
+          <div className="col-span-2 bg-transparent">
+            {villas.map((villa, index) => {
+              const isHovered = hoveredIndex === index;
+              return (
+                <div
+                  key={index}
+                  className={`grid grid-cols-3 items-center py-8 cursor-pointer relative transition-all duration-400 ease-[cubic-bezier(0.88,0.15,0.2,0.84)] ${
+                    isHovered ? "bg-[#e3ae7b] shadow-lg scale-[1.01]" : ""
+                  }`}
+                  style={{
+                    borderBottom: index === villas.length - 1 ? "none" : `1px solid ${borderColor}`,
+                    zIndex: isHovered ? 3 : 1,
+                  }}
+                  onMouseEnter={() => handleRowEnter(index)}
+                  onMouseLeave={handleRowLeave}
+                  onMouseMove={isHovered ? handleMouseMove : undefined}
+                >
+                  <div className={`pl-8 font-bold text-[1.28rem] transition-colors duration-300 ${isHovered ? "text-black" : "text-white"}`}>
+                    {villa.name}
+                  </div>
+                  <div className={`text-[1rem] font-normal transition-colors duration-300 ${isHovered ? "text-black" : "text-[#ececec]"}`}>
+                    {villa.description}
+                  </div>
+                  <div className="flex justify-end pr-5">
+                    <a
+                      href="#"
+                      className={`flex items-center font-semibold text-[1.1rem] transition-colors duration-320 mr-8 ${
+                        isHovered ? "text-black" : "text-[#e3ae7b]"
+                      }`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      See More
+                      <span
+                        className="ml-2 text-[1.7rem] transition-transform duration-420"
+                        style={{
+                          color: isHovered ? "black" : highlightColor,
+                          transform: isHovered ? "translateX(8px)" : "translateX(0)",
+                        }}
+                      >
+                        &rarr;
+                      </span>
+                    </a>
+                  </div>
+
+                  {isHovered && (
+                    <div
+                      className="w-[300px] h-[200px] rounded-[20px] border-[6px] border-white shadow-lg bg-white overflow-hidden select-none"
+                      style={{
+                        position: cardStyle.position,
+                        top: cardStyle.top,
+                        left: cardStyle.left,
+                        transform: cardStyle.transform,
+                        transition: cardStyle.transition,
+                        pointerEvents: "none",
+                        zIndex: 10,
+                      }}
+                    >
+                      <img src={villa.img} alt={villa.name} className="h-full w-full object-cover" draggable={false} />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Layout - Only visible below 'sm' 640px */}
+      <div className="block sm:hidden min-h-screen w-full px-0.5 py-10 font-sans bg-[#171b19] text-white">
+        {/* Stacked Heading */}
+        <div className="max-w-md mx-auto mb-8 text-center">
+          <h1 className="text-3xl font-bold leading-snug">
+            Realty Chamber <br /> For Every <br /> Solution
+          </h1>
+          <p className="mt-4 text-base text-[#ececec] leading-relaxed">
+            We’re thrilled to announce an exciting update for the Realty Chamber website! From residential and commercial to industrial, agricultural, and investor opportunities — we can’t wait to reveal the full experience.
+          </p>
+          <a 
             href="#"
-            className="ml-8 rounded-full border px-9 py-2.5 text-[1 rem] font-medium tracking-wider transition-colors duration-360 ease-in-out"
-            style={{ borderColor: textColor, color: "white", backgroundColor: "transparent" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = textColor;
-              e.currentTarget.style.color = bgColor;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = "white";
-            }}
+            className="inline-block mt-6 px-8 py-2 rounded-full border border-[#ececec] text-[#ececec] font-medium transition-colors duration-300 hover:bg-[#ececec] hover:text-[#171b19]"
           >
             Contact Us
           </a>
         </div>
 
-        <div className="col-span-2 bg-transparent">
-          {villas.map((villa, index) => {
-            const isHovered = hoveredIndex === index;
-            return (
-              <div
-                key={index}
-                className={`grid grid-cols-3 items-center py-8 cursor-pointer relative transition-all duration-400 ease-[cubic-bezier(0.88,0.15,0.2,0.84)] ${
-                  isHovered ? "bg-[#e3ae7b] shadow-lg scale-[1.01]" : ""
-                }`}
-                style={{
-                  borderBottom:
-                    index === villas.length - 1 ? "none" : `1px solid ${borderColor}`,
-                  zIndex: isHovered ? 3 : 1,
-                }}
-                onMouseEnter={() => handleRowEnter(index)}
-                onMouseLeave={handleRowLeave}
-                onMouseMove={isHovered ? handleMouseMove : undefined}
-              >
-                <div
-                  className={`pl-8 font-bold text-[1.28rem] transition-colors duration-300 ${
-                    isHovered ? "text-black" : "text-white"
-                  }`}
+        {/* Stacked Cards */}
+        <div className="max-w-md mx-auto flex flex-col gap-6">
+          {villas.map((villa, index) => (
+            <div 
+              key={index} 
+              className="bg-[#1c211f] rounded-xl border border-[#243137] overflow-hidden shadow cursor-pointer"
+            >
+              <img 
+                src={villa.img} 
+                alt={villa.name}
+                className="w-full h-48 object-cover rounded-t-xl"
+              />
+              <div className="p-4 text-white">
+                <h2 className="text-lg font-bold">{villa.name}</h2>
+                <p className="mt-2 text-sm text-[#ececec]">{villa.description}</p>
+                <a 
+                  href="#"
+                  className="mt-4 inline-block text-[#e3ae7b] font-semibold transition-transform duration-300 hover:translate-x-1"
                 >
-                  {villa.name}
-                </div>
-                <div
-                  className={`text-[1rem] font-normal transition-colors duration-300 ${
-                    isHovered ? "text-black" : "text-[#ececec]"
-                  }`}
-                >
-                  {villa.description}
-                </div>
-                <div className="flex justify-end pr-5">
-                  <a
-                    href="#"
-                    className={`flex items-center font-semibold text-[1.1rem] transition-colors duration-320 mr-8 ${
-                      isHovered ? "text-black" : "text-[#e3ae7b]"
-                    }`}
-                    style={{ textDecoration: "none" }}
-                  >
-                    See More
-                    <span
-                      className={`ml-2 text-[1.7rem] transition-transform duration-420`}
-                      style={{
-                        color: isHovered ? "black" : highlightColor,
-                        transform: isHovered ? "translateX(8px)" : "translateX(0)",
-                      }}
-                    >
-                      &rarr;
-                    </span>
-                  </a>
-                </div>
-
-                {isHovered && (
-                  <div
-                    className="w-[300px] h-[200px] rounded-[20px] border-[6px] border-white shadow-lg bg-white overflow-hidden select-none"
-                    style={{
-                      position: cardStyle.position,
-                      top: cardStyle.top,
-                      left: cardStyle.left,
-                      transform: cardStyle.transform,
-                      transition: cardStyle.transition,
-                      pointerEvents: "none",
-                      zIndex: 10,
-                    }}
-                  >
-                    <img
-                      src={villa.img}
-                      alt={villa.name}
-                      className="h-full w-full object-cover"
-                      draggable={false}
-                    />
-                  </div>
-                )}
+                  See More &rarr;
+                </a>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
