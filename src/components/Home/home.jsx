@@ -61,7 +61,7 @@ const Home = () => {
         </div>
 
         {/* CENTER COLUMN: Leave empty or use for logo, or use w-1/3 and center logo above */}
-        <div className="flex flex-col items-center w-1/3">{/* Place logo here if needed */}</div>
+        {/* <div className="flex flex-col items-center w-1/3">Place logo here if needed</div> */}
 
         {/* RIGHT COLUMN: Tagline and sun */}
         <div className="flex flex-col items-end mr-6 w-1/3">
