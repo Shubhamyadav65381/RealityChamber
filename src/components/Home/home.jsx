@@ -37,7 +37,7 @@ const Home = () => {
         
         
         {/* LEFT COLUMN: Address block */}
-        <div className="flex flex-col items-start w-1/3 ">
+        <div className="flex flex-col items-start w-1/3">
           <a
             href="#"
             className="flex items-center bg-transparent px-20 py-18 rounded group hover:cursor-pointer w-[380px] h-[80px] overflow-hidden"
@@ -103,13 +103,22 @@ const Home = () => {
           overflow: 'hidden',
         }}
       >
+        {/* Vertical lines overlay */}
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 left-[20%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[40%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[60%] h-full w-px bg-white/30" />
+          <div className="absolute top-0 left-[80%] h-full w-px bg-white/30" />
+        </div> */}
+
+
         {/* cutout building image which is zoomed on scroll */}
         <img
           src={cutout_building}
           alt="cuted image"
           className="absolute object-contain pointer-events-none z-10"
           style={{
-            top: 192,
+            top: 155,
             left: -16,
             width: '100%',
             height: 'auto',
@@ -243,7 +252,7 @@ const Home = () => {
         </div>
        <Social />
       </section>
-    </>
+    </> 
   );
 };
 
