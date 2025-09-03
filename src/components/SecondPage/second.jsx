@@ -38,14 +38,13 @@ const Second = () => {
             Introduction
           </h1>
           <h3 className="text-white text-center text-[1.1rem] font-bold md:text-[1.8rem] leading-tight mb-6 max-w-3xl">
-            Realty Chamber, under the leadership of Mr. Ramlal Narwani,
-            is a trusted name in real estate with a strong presence in India and Dubai.
-            We deliver world-class property solutions with integrity, innovation, and unmatched expertise — turning opportunities into success for our clients.
+            Realty Chamber is a global real estate solutions hub, connecting India and Dubai with trust, expertise, and vision. We specialize in high-value deals across residential, commercial, industrial, and luxury properties, serving both individual investors and global brands.
           </h3>
 
-          <span style={{ marginTop: "100px", width: "530px" }}>
+          <span style={{ marginTop: "50px", width: "730px" }}>
             <p className="text-white text-center text-[1.3rem]  md:text-[1.5rem] leading-tight mb-6 max-w-3xl">
-              Realty Chamber, guided by Mr. Ramlal Narwani, empowers clients in India and Dubai with reliable, innovative, and ethical real estate solutions that inspire success.
+              With more than 25 years of experience in real estate, our strength lies in deal-closing, conflict resolution, and cross-border negotiations. We don’t just find properties—we create opportunities, build partnerships, and deliver long-term value.
+              At Realty Chamber, we believe in being the “All Key Man” for our clients—unlocking doors to the best investments, strategic locations, and successful ventures. Whether it’s leasing prime commercial spaces, purchasing luxury residences, or structuring joint ventures, we are your trusted partner in every transaction.
             </p>
             <a
               href="#"
@@ -80,13 +79,13 @@ const Second = () => {
           </h1>
 
           <h3 className="text-white text-center text-[1.05rem] font-semibold leading-snug mb-4">
-            Realty Chamber, under the leadership of Mr. Ramlal Narwani,
-            is a trusted name in real estate with a strong presence in India and Dubai.
-            We deliver world-class property solutions with integrity, innovation, and unmatched expertise — turning opportunities into success for our clients.
+            Realty Chamber is a global real estate solutions hub, connecting India and Dubai with trust, expertise, and vision.
+            We specialize in high-value deals across residential, commercial, industrial, and luxury properties, serving both individual investors and global brands.
           </h3>
 
           <p className="text-white text-center text-[1rem] leading-snug mb-6">
-            Realty Chamber, guided by Mr. Ramlal Narwani, empowers clients in India and Dubai with reliable, innovative, and ethical real estate solutions that inspire success.
+            With over 25 years in real estate, we excel in deal-closure, conflict resolution, and cross-border negotiations. We don’t just find properties—we create opportunities, build partnerships, and deliver lasting value.
+            At Realty Chamber, we serve as your “All Key Man,” unlocking access to prime investments, strategic locations, and successful ventures. From leasing commercial spaces and acquiring luxury homes to structuring joint ventures, we are your trusted partner in every transaction.
           </p>
 
           <div className="flex justify-center">

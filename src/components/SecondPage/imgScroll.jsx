@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import images from "../../assets/images/index.js";
 
-const FADE_TRANSITION_DURATION = 3200; 
+const FADE_TRANSITION_DURATION = 3200;
 
 const AboutSection = () => {
   const imgRefs = useRef([]);
@@ -107,7 +107,7 @@ const AboutSection = () => {
   return (
     <section className="section">
       <div className="base-container">
-        {/* Desktop/Laptop: MARKUP  */}
+        {/* Desktop/Laptop: MARKUP */}
         <div className="hidden md:block">
           <div className="about-hotel-wrapper flex flex-wrap justify-between">
             <div
@@ -146,13 +146,17 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Mobile: ONLY sec_img_one, centered & spaced */}
+        {/* Mobile: ONLY sec_img_one, scrolling upwards */}
         <div className="block md:hidden">
           <div className="flex flex-col items-center px-4 py-6">
             <img
               src={images.sec_img_one}
               alt="Project Photo 1"
               className="w-full max-w-[420px] rounded-3xl shadow-md"
+              style={{
+                transform: `translateY(${180 - scrollY * 0.2}px)`, // << initial offset (50px lower)
+                transition: "transform 0.1s linear",
+              }}
             />
           </div>
         </div>

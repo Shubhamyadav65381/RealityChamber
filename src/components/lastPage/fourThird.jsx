@@ -105,7 +105,7 @@ const FourThird = () => {
       {/* Main Content (left text and right form) */}
       <div className="relative z-30 w-full px-4 md:px-0 max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10 py-12  ">
         {/* Left: Headline and Description */}
-        <div className="md:w-1/2 md:ml-[-250px] md:mt-[-100px] text-white">
+        <div className="md:w-1/2 md:ml-[-150px] md:mt-[-100px] text-white">
           <h2 className="text-3xl sm:text-3xl md:text-5xl lg:text-6x1 font-semibold uppercase tracking-wide mb-4 flex items-center">
             <span className="border-l-4 border-[#d18a91] mr-4 h-12 md:h-16"></span>
             REGISTER YOUR <br /> INTEREST
@@ -119,7 +119,7 @@ const FourThird = () => {
           </p>
         </div>
         {/* Right: Improved Form */}
-        <form className="md:w-6/12  w-full bg-black/40 rounded-lg backdrop-blur flex flex-col gap-6 p-6 border border-white/30 mt-10 ">
+        <form className="md:w-6/12  w-72 bg-black/40 rounded-lg backdrop-blur flex flex-col gap-6 p-6 border border-white/30 mt-10 ">
           {/* FULL NAME */}
           <div>
             <label className="block text-white font-bold mb-2 tracking-wide text-sm">

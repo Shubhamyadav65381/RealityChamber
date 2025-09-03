@@ -259,34 +259,34 @@ const GlobalStyles = () => (
 const tabData = [
   {
     key: "restaurant",
-    title: "Restaurant",
+    title: "Buy",
     image: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684889db387f149c70148c88_4%20(1).webp",
-    label: "Indoor Restaurant",
-    desc: "Garden Open Kitchen Is Part Of The Hotel With Very Rich And Delicious Menu.",
+    label: "Buy a Property",
+    desc: "Discover your ideal property with expert guidance and unmatched options",
     btnLink: "/contact-us",
   },
   {
     key: "bar",
-    title: "Bar",
+    title: "Sell",
     image: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848029f1a7d52164eb0191f_1.webp",
-    label: "Cozy Lounge",
-    desc: "Relax with cocktails and a curated wine list in a stylish atmosphere.",
+    label: "Sell a Property",
+    desc: "Seamlessly sell your property with trusted professionals ensuring fair value.",
     btnLink: "/contact-us",
   },
   {
     key: "terrace",
-    title: "Terrace",
+    title: "Lease",
     image: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684802a24d23ca2c25d27553_2.webp",
-    label: "Outdoor Dining",
-    desc: "Enjoy seasonal dishes and stunning views from the terrace.",
+    label: "Lease",
+    desc: "Find the perfect lease property with comprehensive service and support.",
     btnLink: "/contact-us",
   },
   {
     key: "beachCafe",
-    title: "Beach Cafe",
+    title: "Joint Venture",
     image: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6848027716f06b3a47507bf5_3.webp",
-    label: "Seaside Spot",
-    desc: "Casual bites and drinks served right on the shore with ocean breeze.",
+    label: "Joint Venture",
+    desc: "Invest in promising real estate ventures with trusted industry leaders.",
     btnLink: "/contact-us",
   },
 ];
@@ -317,7 +317,7 @@ const FourSecond = () => {
                 alt="Star"
                 loading="lazy"
               />
-              <span className="fs_award_text">Michelin<br />2025</span>
+              <span className="fs_award_text">Services</span>
             </div>
             {/* Tabs */}
             <div className="fs_tabs_row">
@@ -351,9 +351,9 @@ const FourSecond = () => {
           </div>
           {/* RIGHT SIDE */}
           <div className="fs_right_box">
-            <h2 className="fs_r_title">Arrive Freely<br />We’ll Handle <wbr />The Rest</h2>
+            <h2 className="fs_r_title">Let Us Simplify<br />Your <wbr />Property Experience</h2>
             <p className="fs_r_txt">
-              The Michelin-starred Mirall restaurant, created from the ancient lemon house of Villa Baracchi, has an elegant indoor dining room and a striking panoramic terrace that overlooks Cortona and its hills.
+              From the initial property search to finalizing your deal, our expert team supports you at every step, ensuring smart, stress-free real estate decisions
             </p>
             <a href="/about-us" className="fs_r_btn" tabIndex={0}>Read Here <ArrowIcon fill="currentColor" /></a>
           </div>
@@ -370,7 +370,7 @@ const FourSecond = () => {
             style={{ width: '36px', height: '36px', objectFit: 'contain' }}
           />
           <span style={{ fontWeight: 700, fontSize: '1.3rem', color: 'var(--primary-dark)' }}>
-            Michelin 2025
+            Services
           </span>
         </div>
         {/* Tabs */}

@@ -9,11 +9,13 @@ const Navbar = () => {
   const leftNav = [
     { label: 'Home', href: '#home' },
     {
-      label: 'Add',
-      href: '#add',
+      label: 'Resources',
+      href: '#Resources',
       dropdownItems: [
-        { label: 'Add Property', href: '/add-property' },
-        { label: 'Add Agent', href: '/add-agent' },
+        { label: 'Consultancy', href: '/add-property' },
+        { label: 'Call For Investors', href: '#' },
+        { label: 'Agent Network', href: '#' },
+        { label: 'Pan India Network', href: '#' },
       ],
     },
     {
